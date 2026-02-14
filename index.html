@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miss Lezet – Türkisches Catering</title>
+  <meta name="description" content="Miss Lezet – Türkisches Premium-Catering für Hochzeiten, Firmenfeiern & private Events." />
+
+  <style>
+    :root{
+      --bg:#07090c; --text:#f5f7ff; --muted:#b7c0cf;
+      --brand:#ffbe0b; --brand2:#fb8500; --accent:#ffd166;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 22px 70px rgba(0,0,0,.58);
+      --radius: 22px;
+      --max: 1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(255,190,11,.18), transparent 55%),
+        radial-gradient(900px 600px at 110% 10%, rgba(251,133,0,.16), transparent 50%),
+        radial-gradient(600px 500px at 60% 110%, rgba(255,209,102,.10), transparent 55%),
+        linear-gradient(180deg, #05070a, var(--bg));
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    header{
+      position:sticky; top:0; z-index:80;
+      border-bottom:1px solid var(--line);
+      background: rgba(8,10,12,.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0; gap:12px;
+    }
+
+    .brandBlock{display:flex; align-items:center; gap:12px; min-width:220px}
+    .logoImg{
+      width:46px; height:46px; border-radius:14px;
+      object-fit:contain;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:6px;
+      box-shadow: 0 18px 45px rgba(255,190,11,.18);
+      flex:0 0 46px;
+    }
+    .brandBlock h1{margin:0; font-size:24px; font-weight:1000; letter-spacing:-.4px; line-height:1}
+    .brandBlock small{display:block; color:var(--muted); font-weight:700; margin-top:4px; font-size:12px}
+
+    nav{display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      padding:9px 10px; border-radius:999px;
+      color:var(--muted); border:1px solid transparent;
+      font-size:13px; transition: all .25s ease;
+    }
+    nav a:hover{color:var(--text); border-color: var(--line); background: rgba(255,255,255,.04); transform: translateY(-1px)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:900;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-2px)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#1a1200;
+      border:none;
+      box-shadow: 0 14px 40px rgba(255,190,11,.35);
+    }
+    .btn.primary:hover{transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 55px rgba(255,190,11,.50)}
+    .btn.small{padding:10px 12px; font-size:13px}
+    .langWrap{display:flex; gap:6px; align-items:center}
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding:18px;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .card:hover{transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 90px rgba(0,0,0,.65)}
+    .reveal{opacity:0; transform: translateY(26px); transition: all .75s ease}
+    .reveal.in{opacity:1; transform: translateY(0)}
+
+    .hero{padding:56px 0 22px}
+    .heroGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px; align-items:stretch}
+    .kicker{color:var(--muted); font-weight:900; letter-spacing:.35px; font-size:13px}
+    .headline{
+      font-size: 48px; line-height: 1.02; letter-spacing: -1px; margin:12px 0 10px;
+      background: linear-gradient(135deg, #ffffff, var(--accent), var(--brand));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .sub{color:var(--muted); font-size:15px; line-height:1.65; max-width: 60ch; margin:0 0 18px}
+
+    section{padding:34px 0}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:14px}
+    .sectionTitle h2{margin:0; font-size:22px; letter-spacing:-.3px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{display:grid; gap:14px; grid-template-columns: repeat(12, 1fr)}
+    .aboutMain{grid-column: span 7}
+    .aboutSide{grid-column: span 5}
+    .list{margin:10px 0 0; padding:0; list-style:none}
+    .list li{display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+    .dot{width:10px;height:10px;border-radius:50%;background: linear-gradient(135deg, var(--brand), var(--brand2));margin-top:6px;flex:0 0 10px;box-shadow: 0 10px 22px rgba(255,190,11,.25)}
+    .hint{color:var(--muted); font-size:12px; line-height:1.5}
+
+    .teamCard{grid-column: span 4}
+    .teamRow{display:flex; gap:12px; align-items:center}
+    .avatar{
+      width:46px; height:46px; border-radius: 16px;
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255,190,11,.20), rgba(251,133,0,.10));
+      display:flex; align-items:center; justify-content:center;
+      font-weight:1000; color: rgba(255,255,255,.92);
+    }
+    .role{color:var(--muted); font-size:13px; margin-top:2px}
+
+    .priceCard{grid-column: span 6}
+    .priceLine{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid var(--line); color:var(--muted); font-size:15px}
+    .priceLine b{color: var(--accent); font-weight:1000; font-size:16px}
+
+    .menuCard{grid-column: span 6}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .chip{
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--muted);
+      font-size:12px; font-weight:900;
+      transition: all .25s ease;
+    }
+    .menuCard:hover .chip{background: linear-gradient(135deg, var(--brand), var(--brand2)); color:#1a1200; border-color: transparent; transform: translateY(-1px)}
+
+    .gallery{grid-column: span 12}
+    .galleryGrid{display:grid; gap:12px; grid-template-columns: repeat(12, 1fr)}
+    .g{
+      grid-column: span 4;
+      border-radius: 18px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      min-height: 170px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .g:hover{transform: translateY(-4px); box-shadow: 0 25px 60px rgba(0,0,0,.55)}
+    .g img{width:100%; height:100%; object-fit:cover; display:block; opacity:.92; filter:saturate(1.05) contrast(1.05)}
+    .g span{position:absolute; left:12px; bottom:12px; font-weight:1000; font-size:13px; color: rgba(255,255,255,.92); text-shadow: 0 12px 30px rgba(0,0,0,.75)}
+
+    .lightbox{
+      position:fixed; inset:0; z-index:120;
+      background: rgba(0,0,0,.75);
+      display:none;
+      align-items:center; justify-content:center;
+      padding:18px;
+    }
+    .lightboxInner{
+      width:min(980px, 100%);
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(10,12,16,.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow:hidden;
+      box-shadow: 0 30px 100px rgba(0,0,0,.75);
+      position:relative;
+    }
+    .lightboxInner img{width:100%; height: min(70vh, 720px); object-fit:cover; display:block}
+    .lbCap{padding:12px 14px; color: var(--muted); font-size:13px; border-top:1px solid rgba(255,255,255,.10)}
+    .lbClose{
+      position:absolute; top:10px; right:10px;
+      border:none; cursor:pointer;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      color: var(--text); font-weight:1000;
+    }
+
+    .contactLeft{grid-column: span 5}
+    .contactRight{grid-column: span 7}
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, textarea, select{
+      width:100%; padding:12px 12px; border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      color: var(--text); outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .formRow{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+
+    footer{padding:22px 0 48px; color:var(--muted); border-top:1px solid var(--line); margin-top:16px}
+    .footerGrid{display:grid; gap:12px; grid-template-columns: 1.2fr .8fr; align-items:start}
+    .small{font-size:12px; line-height:1.6}
+    .right{justify-self:end; text-align:right}
+
+    /* Featured package (Empfohlen) */
+    .packageFeatured{
+      position: relative;
+      border-color: rgba(255,190,11,.38) !important;
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04)) !important;
+      box-shadow: 0 30px 100px rgba(255,190,11,.16), 0 28px 90px rgba(0,0,0,.65) !important;
+      transform: translateY(-4px);
+    }
+    .packageFeatured::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius: var(--radius);
+      pointer-events:none;
+      background: radial-gradient(500px 220px at 20% 0%, rgba(255,190,11,.22), transparent 60%);
+      opacity: .9;
+    }
+    .packageBadgeTop{
+      position:absolute;
+      top:14px;
+      right:14px;
+      z-index:2;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,190,11,.40);
+      background: rgba(8,10,12,.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-weight:1000;
+      color: var(--accent);
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+
+    @media (max-width: 980px){
+      nav{display:none}
+      .heroGrid{grid-template-columns:1fr}
+      .headline{font-size:38px}
+      .aboutMain,.aboutSide,.contactLeft,.contactRight,.priceCard,.menuCard{grid-column: span 12}
+      .teamCard{grid-column: span 6}
+      .g{grid-column: span 6}
+      .footerGrid{grid-template-columns:1fr}
+      .right{justify-self:start; text-align:left}
+    }
+    @media (max-width: 560px){
+      .headline{font-size:34px}
+      .teamCard{grid-column: span 12}
+      .g{grid-column: span 12}
+      .formRow{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brandBlock" href="#top" aria-label="Zur Startseite">
+          <img class="logoImg" src="images/logo.png" alt="Miss Lezet Logo">
+          <div>
+            <h1 id="brandName">Miss Lezet</h1>
+            <small id="brandTagline">Türkisches Premium-Catering • Frisch • Hausgemacht</small>
+          </div>
+        </a>
+
+        <div class="langWrap">
+          <button class="btn small" type="button" id="langDE">DE</button>
+          <button class="btn small" type="button" id="langTR">TR</button>
+          <button class="btn small" type="button" id="langEN">EN</button>
+          <a class="btn small" href="/admin/">Admin</a>
+        </div>
+
+        <a class="btn primary" href="#kontakt" id="ctaTop">Angebot anfragen →</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="container hero">
+      <div class="heroGrid">
+        <div class="card reveal">
+          <div class="kicker" id="heroKicker"></div>
+          <h2 class="headline" id="heroHeadline"></h2>
+          <p class="sub" id="heroSub"></p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+            <a class="btn primary" href="#menu" id="btnMenu">Menü ansehen</a>
+            <button class="btn" type="button" id="btnPdf">Preisliste als PDF</button>
+          </div>
+          <div class="hint" style="margin-top:12px" id="heroHint">
+            Tipp: Inhalte & Galerie kannst du später über <b>/admin</b> pflegen.
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="font-weight:1000; margin-bottom:8px" id="quickTitle">Quick Facts</div>
+          <ul class="list" style="margin:0">
+            <li><span class="dot" aria-hidden="true"></span><span id="q1">Buffets & Fingerfood für 10–300+ Personen</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span id="q2">Vegetarisch/Vegan möglich</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span id="q3">Pünktlich & zuverlässig</span></li>
+          </ul>
+          <div class="hint" style="margin-top:10px" id="adminHint">Admin: <b>/admin</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÜBER UNS -->
+    <section id="ueber-uns">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="aboutTitle">Über uns</h2>
+          <p id="aboutSub">Miss Lezet – türkische Klassiker modern serviert.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card aboutMain reveal">
+            <p id="aboutText" style="margin:0; color:var(--muted); line-height:1.75"></p>
+            <ul class="list" id="aboutBullets"></ul>
+          </div>
+
+          <div class="card aboutSide reveal">
+            <div style="font-weight:1000; letter-spacing:-.2px; font-size:16px" id="howTitle">So funktioniert’s</div>
+            <ol id="howList" style="margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.9; font-size:14px">
+              <li>Anfrage senden</li>
+              <li>Menü & Budget abstimmen</li>
+              <li>Lieferung/Abholung + Aufbau</li>
+              <li>Genießen ✨</li>
+            </ol>
+            <div class="hint" style="margin-top:10px" id="howHint">Allergene/Unverträglichkeiten im Kontaktformular angeben.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAKETE -->
+    <section id="pakete">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="packagesTitle">Pakete</h2>
+          <p id="packagesSub">Schnell wählen – wir passen alles individuell an.</p>
+        </div>
+        <div class="grid" id="packagesGrid"></div>
+      </div>
+    </section>
+
+    <!-- MITARBEITER -->
+    <section id="mitarbeiter">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="teamTitle">Mitarbeiter</h2>
+          <p id="teamSub">Menschen, die den Geschmack möglich machen.</p>
+        </div>
+        <div class="grid" id="teamGrid"></div>
+        <div class="hint" id="teamHint" style="margin-top:10px">Team kannst du im Admin pflegen.</div>
+      </div>
+    </section>
+
+    <!-- PREISLISTE -->
+    <section id="preisliste">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="pricesTitle">Preisliste</h2>
+          <p id="pricesSub">Richtwerte – Angebote nach Auswahl & Personenanzahl.</p>
+        </div>
+        <div class="grid" id="pricingGrid"></div>
+      </div>
+    </section>
+
+    <!-- MENÜ -->
+    <section id="menu">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="menuTitle">Menü</h2>
+          <p id="menuSub">Beispielauswahl – kombinierbar nach Wunsch.</p>
+        </div>
+        <div class="grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="galleryTitle">Galerie</h2>
+          <p id="gallerySub">Klick auf ein Bild → Lightbox.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card gallery reveal">
+            <div class="galleryGrid" id="galleryGrid"></div>
+            <div class="hint" style="margin-top:10px" id="galleryHint">
+              Bilder hochladen & Reihenfolge ändern: <b>/admin</b> → Galerie.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightboxInner" role="dialog" aria-label="Galerie Vorschau">
+        <button class="lbClose" id="lbClose" type="button">✕</button>
+        <img id="lbImg" alt="Vorschau" src="" />
+        <div class="lbCap" id="lbCap"></div>
+      </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <section id="social">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="socialTitle">Stimmen</h2>
+          <p id="socialSub">Kurz & vertrauensstark.</p>
+        </div>
+        <div class="grid" id="socialGrid"></div>
+      </div>
+    </section>
+
+    <!-- KONTAKT (Netlify Forms) -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="contactTitle">Kontaktformular</h2>
+          <p id="contactSub">Schreib uns kurz – wir melden uns schnell.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card contactLeft reveal">
+            <div style="font-weight:1000; font-size:16px" id="contactBoxTitle">Kontakt</div>
+            <p id="contactBoxText" style="color:var(--muted); line-height:1.75; margin:10px 0 0">
+              Trage Datum, Ort und Personenanzahl ein – optional Budget, Allergene und besondere Wünsche.
+            </p>
+
+            <ul class="list" style="margin-top:12px">
+              <li><span class="dot" aria-hidden="true"></span>📍 <span id="contactCity" style="color:var(--text)"></span></li>
+              <li><span class="dot" aria-hidden="true"></span>📞 <span id="contactPhone" style="color:var(--text)"></span></li>
+              <li><span class="dot" aria-hidden="true"></span>✉️ <span id="contactEmail" style="color:var(--text)"></span></li>
+            </ul>
+
+            <div class="hint" id="contactHint">
+              Netlify kann dir Anfragen per E-Mail weiterleiten (Site settings → Forms).
+            </div>
+          </div>
+
+          <div class="card contactRight reveal">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p style="display:none;">
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <div class="formRow">
+                <div>
+                  <label for="name" id="fName">Name</label>
+                  <input id="name" name="name" required placeholder="Vor- und Nachname" />
+                </div>
+                <div>
+                  <label for="email" id="fEmail">E-Mail</label>
+                  <input id="email" name="email" type="email" required placeholder="name@mail.de" />
+                </div>
+              </div>
+
+              <div class="formRow">
+                <div>
+                  <label for="date" id="fDate">Event-Datum</label>
+                  <input id="date" name="date" type="date" />
+                </div>
+                <div>
+                  <label for="people" id="fPeople">Personenanzahl</label>
+                  <input id="people" name="people" type="number" min="1" placeholder="z.B. 35" />
+                </div>
+              </div>
+
+              <label for="message" id="fMsg">Nachricht</label>
+              <textarea id="message" name="message" placeholder="Wünsche, Menüideen, Allergene, Budgetrahmen…"></textarea>
+
+              <button class="btn primary" type="submit" id="fSend">Anfrage senden</button>
+              <div class="hint" style="margin-top:10px" id="fSpam">Anti-Spam aktiv. Kein Backend nötig.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPRESSUM -->
+    <section id="impressum">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2 id="imprintTitle">Impressum</h2>
+          <p id="imprintSub">Bitte mit euren echten Daten ergänzen.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card reveal" style="grid-column: span 12">
+            <div class="small" id="imprintBox"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footerGrid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+            <img class="logoImg" src="images/logo.png" alt="Miss Lezet Logo" style="width:30px;height:30px;border-radius:12px;padding:5px">
+            <div style="font-weight:1000" id="brandNameFooter">Miss Lezet</div>
+          </div>
+          <div class="small">© <span id="year"></span> <span id="brandNameFoot2">Miss Lezet</span></div>
+        </div>
+        <div class="right small">
+          <a href="/admin/">Admin</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting && e.target.classList.add("in"));
+    }, { threshold: 0.14 });
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+    // Lightbox
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCap = document.getElementById("lbCap");
+    const lbClose = document.getElementById("lbClose");
+    const closeLb = () => { lb.style.display = "none"; lbImg.src = ""; lbCap.textContent = ""; };
+    lbClose.addEventListener("click", closeLb);
+    lb.addEventListener("click", (e) => { if(e.target === lb) closeLb(); });
+    window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLb(); });
+
+    // Language
+    let SITE = null;
+    let LANG = localStorage.getItem("ml_lang") || "de";
+
+    const t = (val) => {
+      if (val == null) return "";
+      if (typeof val === "object" && !Array.isArray(val)) {
+        return val[LANG] ?? val.de ?? Object.values(val)[0] ?? "";
+      }
+      return val;
+    };
+    const tList = (val) => {
+      if (!val) return [];
+      if (Array.isArray(val)) return val;
+      if (typeof val === "object") return val[LANG] ?? val.de ?? [];
+      return [];
+    };
+
+    function setLang(lang){
+      LANG = lang;
+      localStorage.setItem("ml_lang", LANG);
+      render();
+      document.documentElement.lang = (LANG==="tr" ? "tr" : (LANG==="en" ? "en" : "de"));
+    }
+
+    document.getElementById("langDE").addEventListener("click", () => setLang("de"));
+    document.getElementById("langTR").addEventListener("click", () => setLang("tr"));
+    document.getElementById("langEN").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnPdf").addEventListener("click", () => window.print());
+
+    async function loadContent(){
+      const res = await fetch("./content.json", { cache: "no-store" });
+      SITE = await res.json();
+      render();
+      setLang(LANG);
+    }
+
+    function uiStaticText(){
+      // kleine UI Texte (nicht im CMS), mehrsprachig:
+      const map = {
+        de: {
+          ctaTop: "Angebot anfragen →",
+          btnMenu: "Menü ansehen",
+          heroHint: "Tipp: Inhalte & Galerie kannst du später über /admin pflegen.",
+          quickTitle: "Quick Facts",
+          q1: "Buffets & Fingerfood für 10–300+ Personen",
+          q2: "Vegetarisch/Vegan möglich",
+          q3: "Pünktlich & zuverlässig",
+          adminHint: "Admin: /admin",
+          aboutTitle:"Über uns",
+          aboutSub:"Miss Lezet – türkische Klassiker modern serviert.",
+          howTitle:"So funktioniert’s",
+          howHint:"Allergene/Unverträglichkeiten im Kontaktformular angeben.",
+          packagesTitle:"Pakete",
+          packagesSub:"Schnell wählen – wir passen alles individuell an.",
+          teamTitle:"Mitarbeiter",
+          teamSub:"Menschen, die den Geschmack möglich machen.",
+          teamHint:"Team kannst du im Admin pflegen.",
+          pricesTitle:"Preisliste",
+          pricesSub:"Richtwerte – Angebote nach Auswahl & Personenanzahl.",
+          menuTitle:"Menü",
+          menuSub:"Beispielauswahl – kombinierbar nach Wunsch.",
+          galleryTitle:"Galerie",
+          gallerySub:"Klick auf ein Bild → Lightbox.",
+          galleryHint:"Bilder hochladen & Reihenfolge ändern: /admin → Galerie.",
+          socialTitle:"Stimmen",
+          socialSub:"Kurz & vertrauensstark.",
+          contactTitle:"Kontaktformular",
+          contactSub:"Schreib uns kurz – wir melden uns schnell.",
+          contactBoxTitle:"Kontakt",
+          contactHint:"Netlify kann dir Anfragen per E-Mail weiterleiten (Site settings → Forms).",
+          fName:"Name", fEmail:"E-Mail", fDate:"Event-Datum", fPeople:"Personenanzahl", fMsg:"Nachricht", fSend:"Anfrage senden",
+          fSpam:"Anti-Spam aktiv. Kein Backend nötig.",
+          imprintTitle:"Impressum",
+          imprintSub:"Bitte mit euren echten Daten ergänzen.",
+          recommended:"Empfohlen"
+        },
+        tr: {
+          ctaTop: "Teklif iste →",
+          btnMenu: "Menüyü gör",
+          heroHint: "İpucu: İçerik ve galeriyi /admin üzerinden yönetebilirsin.",
+          quickTitle: "Özet",
+          q1: "10–300+ kişi için büfe & fingerfood",
+          q2: "Vejetaryen/Vegan mümkün",
+          q3: "Dakik & güvenilir",
+          adminHint: "Admin: /admin",
+          aboutTitle:"Hakkımızda",
+          aboutSub:"Miss Lezet – modern sunumlu Türk klasikleri.",
+          howTitle:"Nasıl çalışır",
+          howHint:"Alerjen/özel istekleri formda belirtin.",
+          packagesTitle:"Paketler",
+          packagesSub:"Hızlı seç — biz sana göre uyarlayalım.",
+          teamTitle:"Ekip",
+          teamSub:"Lezzeti mümkün kılan insanlar.",
+          teamHint:"Ekibi admin’den düzenleyebilirsin.",
+          pricesTitle:"Fiyatlar",
+          pricesSub:"Tahmini — net teklif seçime ve kişi sayısına göre.",
+          menuTitle:"Menü",
+          menuSub:"Örnek seçenekler — isteğe göre kombine.",
+          galleryTitle:"Galeri",
+          gallerySub:"Resme tıkla → büyüt.",
+          galleryHint:"Resim yükle & sıralamayı değiştir: /admin → Galeri.",
+          socialTitle:"Yorumlar",
+          socialSub:"Kısa & güven veren.",
+          contactTitle:"İletişim",
+          contactSub:"Kısaca yaz — hızlı döneriz.",
+          contactBoxTitle:"İletişim",
+          contactHint:"Netlify istekleri e-posta ile iletebilir (Site settings → Forms).",
+          fName:"Ad Soyad", fEmail:"E-posta", fDate:"Tarih", fPeople:"Kişi", fMsg:"Mesaj", fSend:"Gönder",
+          fSpam:"Anti-spam aktif. Backend gerekmez.",
+          imprintTitle:"Künye",
+          imprintSub:"Lütfen gerçek bilgileri ekleyin.",
+          recommended:"Önerilen"
+        },
+        en: {
+          ctaTop: "Request a quote →",
+          btnMenu: "View menu",
+          heroHint: "Tip: Manage content & gallery via /admin.",
+          quickTitle: "Quick Facts",
+          q1: "Buffets & finger food for 10–300+ guests",
+          q2: "Vegetarian/Vegan available",
+          q3: "On time & reliable",
+          adminHint: "Admin: /admin",
+          aboutTitle:"About",
+          aboutSub:"Miss Lezet — Turkish classics, modern presentation.",
+          howTitle:"How it works",
+          howHint:"Add allergies/dietary needs in the form.",
+          packagesTitle:"Packages",
+          packagesSub:"Pick fast — we’ll tailor everything to your event.",
+          teamTitle:"Team",
+          teamSub:"People behind the flavor.",
+          teamHint:"Edit team in the admin panel.",
+          pricesTitle:"Pricing",
+          pricesSub:"Guidelines — final quote depends on selection & guest count.",
+          menuTitle:"Menu",
+          menuSub:"Sample options — mix & match.",
+          galleryTitle:"Gallery",
+          gallerySub:"Click an image → lightbox.",
+          galleryHint:"Upload images & reorder: /admin → Gallery.",
+          socialTitle:"Reviews",
+          socialSub:"Short & trust-building.",
+          contactTitle:"Contact",
+          contactSub:"Send a quick note — we’ll reply fast.",
+          contactBoxTitle:"Contact",
+          contactHint:"Netlify can forward submissions via email (Site settings → Forms).",
+          fName:"Name", fEmail:"Email", fDate:"Event date", fPeople:"Guests", fMsg:"Message", fSend:"Send inquiry",
+          fSpam:"Anti-spam enabled. No backend needed.",
+          imprintTitle:"Imprint",
+          imprintSub:"Please add your legal details.",
+          recommended:"Recommended"
+        }
+      };
+      return map[LANG] || map.de;
+    }
+
+    function render(){
+      if(!SITE) return;
+      const UI = uiStaticText();
+
+      // UI labels
+      document.getElementById("ctaTop").textContent = UI.ctaTop;
+      document.getElementById("btnMenu").textContent = UI.btnMenu;
+      document.getElementById("heroHint").innerHTML = UI.heroHint.replace("/admin","<b>/admin</b>");
+      document.getElementById("quickTitle").textContent = UI.quickTitle;
+      document.getElementById("q1").textContent = UI.q1;
+      document.getElementById("q2").textContent = UI.q2;
+      document.getElementById("q3").textContent = UI.q3;
+      document.getElementById("adminHint").textContent = UI.adminHint;
+
+      document.getElementById("aboutTitle").textContent = UI.aboutTitle;
+      document.getElementById("aboutSub").textContent = UI.aboutSub;
+      document.getElementById("howTitle").textContent = UI.howTitle;
+      document.getElementById("howHint").textContent = UI.howHint;
+
+      document.getElementById("packagesTitle").textContent = UI.packagesTitle;
+      document.getElementById("packagesSub").textContent = UI.packagesSub;
+
+      document.getElementById("teamTitle").textContent = UI.teamTitle;
+      document.getElementById("teamSub").textContent = UI.teamSub;
+      document.getElementById("teamHint").textContent = UI.teamHint;
+
+      document.getElementById("pricesTitle").textContent = UI.pricesTitle;
+      document.getElementById("pricesSub").textContent = UI.pricesSub;
+
+      document.getElementById("menuTitle").textContent = UI.menuTitle;
+      document.getElementById("menuSub").textContent = UI.menuSub;
+
+      document.getElementById("galleryTitle").textContent = UI.galleryTitle;
+      document.getElementById("gallerySub").textContent = UI.gallerySub;
+      document.getElementById("galleryHint").textContent = UI.galleryHint;
+
+      document.getElementById("socialTitle").textContent = UI.socialTitle;
+      document.getElementById("socialSub").textContent = UI.socialSub;
+
+      document.getElementById("contactTitle").textContent = UI.contactTitle;
+      document.getElementById("contactSub").textContent = UI.contactSub;
+      document.getElementById("contactBoxTitle").textContent = UI.contactBoxTitle;
+      document.getElementById("contactHint").textContent = UI.contactHint;
+
+      document.getElementById("fName").textContent = UI.fName;
+      document.getElementById("fEmail").textContent = UI.fEmail;
+      document.getElementById("fDate").textContent = UI.fDate;
+      document.getElementById("fPeople").textContent = UI.fPeople;
+      document.getElementById("fMsg").textContent = UI.fMsg;
+      document.getElementById("fSend").textContent = UI.fSend;
+      document.getElementById("fSpam").textContent = UI.fSpam;
+
+      document.getElementById("imprintTitle").textContent = UI.imprintTitle;
+      document.getElementById("imprintSub").textContent = UI.imprintSub;
+
+      // Brand
+      const brandName = t(SITE.brand?.name) || "Miss Lezet";
+      document.getElementById("brandName").textContent = brandName;
+      document.getElementById("brandTagline").textContent = t(SITE.brand?.tagline) || "";
+      document.getElementById("brandNameFooter").textContent = brandName;
+      document.getElementById("brandNameFoot2").textContent = brandName;
+      document.title = `${brandName} – Turkish Catering`;
+
+      // Hero (CMS)
+      document.getElementById("heroKicker").textContent = t(SITE.hero?.kicker);
+      document.getElementById("heroHeadline").textContent = t(SITE.hero?.headline);
+      document.getElementById("heroSub").textContent = t(SITE.hero?.sub);
+
+      // About
+      document.getElementById("aboutText").textContent = t(SITE.about?.text);
+      const bullets = document.getElementById("aboutBullets");
+      bullets.innerHTML = "";
+      tList(SITE.about?.bullets).forEach(b => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="dot"></span><span>${b}</span>`;
+        bullets.appendChild(li);
+      });
+
+      // Packages (Featured = Family & Friends)
+      const pg = document.getElementById("packagesGrid");
+      pg.innerHTML = "";
+      tList(SITE.packages).forEach(p => {
+        const title = (p.title || "").toLowerCase();
+        const isFeatured =
+          title.includes("family") || title.includes("friends") ||
+          title.includes("büfe") || title.includes("buffet");
+
+        const card = document.createElement("div");
+        card.className = "card reveal";
+        card.style.gridColumn = isFeatured ? "span 12" : "span 6";
+        if(isFeatured) card.classList.add("packageFeatured");
+
+        const feats = (p.features || []).map(x => `<li style="margin:6px 0;color:var(--muted)">${x}</li>`).join("");
+
+        card.innerHTML = `
+          ${isFeatured ? `<div class="packageBadgeTop">${UI.recommended}</div>` : ""}
+
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+            <div>
+              <div style="font-weight:1000;font-size:16px">${p.title || ""}</div>
+              <div style="color:var(--muted);margin-top:6px;line-height:1.6">${p.desc || ""}</div>
+            </div>
+            <div style="text-align:right">
+              ${p.badge ? `<div style="display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:1000;color:var(--accent);font-size:12px">${p.badge}</div>` : ""}
+              <div style="margin-top:10px;font-weight:1000;color:var(--accent)">${p.price || ""}</div>
+            </div>
+          </div>
+
+          ${p.image ? `
+            <div style="margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid var(--line)">
+              <img src="${p.image}" alt="${p.title || "Paket"}" style="width:100%;height:${isFeatured ? "280px" : "200px"};object-fit:cover;display:block;opacity:.95">
+            </div>` : ""}
+
+          ${feats ? `<ul style="margin:12px 0 0;padding-left:18px">${feats}</ul>` : ""}
+
+          <div style="margin-top:12px">
+            <a class="btn primary" href="#kontakt">${LANG==="tr" ? "Teklif al →" : (LANG==="en" ? "Request a quote →" : "Anfragen →")}</a>
+          </div>
+        `;
+        pg.appendChild(card);
+        obs.observe(card);
+      });
+
+      // Team
+      const teamGrid = document.getElementById("teamGrid");
+      teamGrid.innerHTML = "";
+      tList(SITE.team).forEach(p => {
+        const initials = (p.initials || (p.name || "").split(" ").slice(0,2).map(x => x[0]).join("")).toUpperCase();
+        const card = document.createElement("div");
+        card.className = "card teamCard reveal";
+        card.innerHTML = `
+          <div class="teamRow">
+            <div class="avatar">${initials || "ML"}</div>
+            <div>
+              <div style="font-weight:1000">${p.name || ""}</div>
+              <div class="role">${p.role || ""}</div>
+            </div>
+          </div>
+          <p style="color:var(--muted); margin:12px 0 0; line-height:1.7; font-size:14px">${p.text || ""}</p>
+        `;
+        teamGrid.appendChild(card);
+        obs.observe(card);
+      });
+
+      // Pricing
+      const pricingGrid = document.getElementById("pricingGrid");
+      pricingGrid.innerHTML = "";
+      tList(SITE.pricing).forEach(cat => {
+        const wrap = document.createElement("div");
+        wrap.className = "card priceCard reveal";
+        const items = (cat.items || []).map(it => `
+          <div class="priceLine"><span>${it.label || ""}</span><b>${it.value || ""}</b></div>
+        `).join("");
+        wrap.innerHTML = `
+          <div style="font-weight:1000; font-size:16px">${cat.title || ""}</div>
+          ${items}
+          ${cat.hint ? `<div class="hint" style="margin-top:8px">${cat.hint}</div>` : ``}
+        `;
+        pricingGrid.appendChild(wrap);
+        obs.observe(wrap);
+      });
+
+      // Menu
+      const menuGrid = document.getElementById("menuGrid");
+      menuGrid.innerHTML = "";
+      tList(SITE.menu).forEach(cat => {
+        const wrap = document.createElement("div");
+        wrap.className = "card menuCard reveal";
+        const chips = (cat.items || []).map(x => `<span class="chip">${x}</span>`).join("");
+        wrap.innerHTML = `
+          <div style="font-weight:1000; font-size:16px">${cat.title || ""}</div>
+          <div class="chips">${chips}</div>
+          ${cat.hint ? `<p class="hint" style="margin:10px 0 0">${cat.hint}</p>` : ``}
+        `;
+        menuGrid.appendChild(wrap);
+        obs.observe(wrap);
+      });
+
+      // Gallery
+      const galleryGrid = document.getElementById("galleryGrid");
+      galleryGrid.innerHTML = "";
+      tList(SITE.gallery).forEach(item => {
+        const src = item.image;
+        const cap = item.caption;
+        const tile = document.createElement("div");
+        tile.className = "g";
+        tile.innerHTML = `<img src="${src}" alt="${cap}"><span>${cap}</span>`;
+        tile.addEventListener("click", () => {
+          lbImg.src = src;
+          lbCap.textContent = cap;
+          lb.style.display = "flex";
+        });
+        galleryGrid.appendChild(tile);
+      });
+
+      // Social
+      const socialGrid = document.getElementById("socialGrid");
+      socialGrid.innerHTML = "";
+      tList(SITE.social).forEach(s => {
+        const card = document.createElement("div");
+        card.className = "card reveal";
+        card.style.gridColumn = "span 6";
+        card.innerHTML = `
+          <div style="font-weight:1000">${s.title || ""}</div>
+          <div style="margin-top:10px;color:var(--muted);line-height:1.6">${s.text || ""}</div>
+        `;
+        socialGrid.appendChild(card);
+        obs.observe(card);
+      });
+
+      // Contact
+      document.getElementById("contactCity").textContent = t(SITE.contact?.city);
+      document.getElementById("contactPhone").textContent = t(SITE.contact?.phone);
+      document.getElementById("contactEmail").textContent = SITE.contact?.email || "";
+
+      // Imprint
+      document.getElementById("imprintBox").innerHTML = t(SITE.imprintHtml);
+    }
+
+    loadContent().catch(console.error);
+  </script>
+</body>
+</html>

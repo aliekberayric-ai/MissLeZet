@@ -1,0 +1,125 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "/images/gallery"
+
+i18n:
+  structure: single_file
+  locales: [de, tr, en]
+  default_locale: de
+
+collections:
+  - name: "site"
+    label: "Website Inhalte"
+    i18n: true
+    files:
+      - file: "content.json"
+        label: "Inhalte (DE/TR/EN)"
+        name: "content"
+        i18n: true
+        format: "json"
+        fields:
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            i18n: true
+            fields:
+              - { label: "Website Name", name: "name", widget: "string", i18n: true }
+              - { label: "Tagline", name: "tagline", widget: "string", i18n: true }
+
+          - label: "Kontakt"
+            name: "contact"
+            widget: "object"
+            i18n: true
+            fields:
+              - { label: "Stadt/Ort", name: "city", widget: "string", i18n: true }
+              - { label: "Telefon", name: "phone", widget: "string", required: false, i18n: true }
+              - { label: "E-Mail", name: "email", widget: "string", i18n: duplicate }
+
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            i18n: true
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string", i18n: true }
+              - { label: "Headline", name: "headline", widget: "string", i18n: true }
+              - { label: "Text", name: "sub", widget: "text", i18n: true }
+
+          - label: "Über uns"
+            name: "about"
+            widget: "object"
+            i18n: true
+            fields:
+              - { label: "Text", name: "text", widget: "text", i18n: true }
+              - { label: "Bullets", name: "bullets", widget: "list", i18n: true }
+
+          - label: "Pakete"
+            name: "packages"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.title}} — {{fields.price}}"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Preis", name: "price", widget: "string" }
+              - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
+              - { label: "Beschreibung", name: "desc", widget: "text" }
+              - { label: "Features", name: "features", widget: "list" }
+              - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+
+          - label: "Mitarbeiter"
+            name: "team"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Rolle", name: "role", widget: "string" }
+              - { label: "Beschreibung", name: "text", widget: "text" }
+              - { label: "Initialen", name: "initials", widget: "string", required: false }
+
+          - label: "Preise"
+            name: "pricing"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Kategorie", name: "title", widget: "string" }
+              - { label: "Hinweis", name: "hint", widget: "string", required: false }
+              - label: "Positionen"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Preis", name: "value", widget: "string" }
+
+          - label: "Menü"
+            name: "menu"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Kategorie", name: "title", widget: "string" }
+              - { label: "Hinweis", name: "hint", widget: "string", required: false }
+              - { label: "Items (Chips)", name: "items", widget: "list" }
+
+          - label: "Galerie"
+            name: "gallery"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Bild", name: "image", widget: "image" }
+              - { label: "Titel", name: "caption", widget: "string" }
+
+          - label: "Social Proof"
+            name: "social"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+
+          - { label: "Impressum (HTML)", name: "imprintHtml", widget: "text", i18n: true }
