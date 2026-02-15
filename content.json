@@ -1,144 +1,230 @@
 {
-  "de": {
-    "brand": {
-      "name": "MissLeZet",
-      "tagline": "MissLeZet - Wo türkische Spezialitäten die Seele nähren und jedes Lächeln würzen."
+  "brand": {
+    "name": { "de": "Miss Lezet", "tr": "Miss Lezet", "en": "Miss Lezet" },
+    "tagline": {
+      "de": "Türkisches Premium-Catering • Frisch • Hausgemacht",
+      "tr": "Türk Premium Catering • Taze • Ev yapımı",
+      "en": "Turkish Premium Catering • Fresh • Homemade"
+    }
+  },
+  "contact": {
+    "city": { "de": "Berlin", "tr": "Berlin", "en": "Berlin" },
+    "phone": { "de": "+49 …", "tr": "+49 …", "en": "+49 …" },
+    "email": "info@misslezet.de"
+  },
+  "hero": {
+    "kicker": {
+      "de": "Catering für Hochzeiten, Firmen & private Events",
+      "tr": "Düğün, şirket ve özel etkinlik catering",
+      "en": "Catering for weddings, corporate & private events"
     },
-    "contact": {
-      "city": "Rüsselsheim",
-      "phone": "+49 155561363071",
-      "email": "kunstai6333@gmail.com"
+    "headline": {
+      "de": "Türkische Küche, die nach Zuhause schmeckt.",
+      "tr": "Ev tadında Türk mutfağı.",
+      "en": "Turkish food that feels like home."
     },
-    "hero": {
-      "kicker": "Ein Bissen Türkei in jedem Gericht",
-      "headline": "Ein BISSEN Türkiye",
-      "sub": "MissLeZet bringt die Vielfalt der türkischen Küche direkt auf deinen Teller - frisch, authentisch, unvergesslich!"
+    "sub": {
+      "de": "Miss Lezet bringt traditionelle Rezepte, frische Zutaten und eine edle Präsentation auf dein Event – von Mezze & Börek bis Grill, Desserts und vegetarischen Optionen.",
+      "tr": "Miss Lezet; mezeler, börek, ızgara, tatlılar ve vejetaryen seçeneklerle etkinliğinize premium sunum getirir.",
+      "en": "Miss Lezet delivers traditional recipes, fresh ingredients and a premium presentation—mezze, börek, grill, desserts and vegetarian options."
+    }
+  },
+  "about": {
+    "text": {
+      "de": "Wir sind ein Catering-Team mit Leidenschaft für authentische türkische Küche. Unser Fokus: ehrliche Zutaten, saubere Aromen und ein Buffet, das sowohl optisch als auch geschmacklich überzeugt.",
+      "tr": "Otantik Türk mutfağına tutkuyla bağlı bir catering ekibiyiz. Dürüst malzeme, temiz aromalar ve şık bir büfe sunumu.",
+      "en": "We’re a catering team passionate about authentic Turkish cuisine—honest ingredients, clean flavors, and a buffet that looks as good as it tastes."
     },
-    "about": {
-      "text": "Bei MissLeZet dreht sich alles um authentische türkische Spezialitäten, die wir mit Leidenschaft zubereiten. Ob klassische Meze, herzhafte Hauptgerichte oder süße Verführungen - wir bringen ein Stück Türkei auf deinen Teller. Unser Ziel: Dir ein Lächeln ins Gesicht zu zaubern - mit jedem Bissen!",
-      "bullets": [
-        "Frisch und hausgemacht.",
-        "Originelle Familienrezepte",
-        "Täglich frisch zubereitet"
+    "bullets": {
+      "de": [
+        "Flexible Menüs: klassisch, vegetarisch oder gemischt",
+        "Professionelles Setup: Warmhaltebehälter, Beschilderung, Besteck (optional)",
+        "Transparente Kalkulation & fairer Portionsansatz"
+      ],
+      "tr": [
+        "Esnek menüler: klasik, vejetaryen veya karışık",
+        "Profesyonel kurulum: ısıtıcılar, etiketleme, çatal-bıçak (opsiyonel)",
+        "Şeffaf fiyatlama ve adil porsiyon"
+      ],
+      "en": [
+        "Flexible menus: classic, vegetarian or mixed",
+        "Professional setup: warmers, labels, cutlery (optional)",
+        "Transparent pricing & fair portions"
       ]
-    },
-    "packages": [
+    }
+  },
+  "packages": {
+    "de": [
       {
-        "title": "Nudelsalat",
-        "price": "3€ pro Schale",
-        "badge": "",
-        "desc": "Nudelsalat",
+        "title": "Business Lunch",
+        "price": "ab 16,90 € p.P.",
+        "badge": "Beliebt",
+        "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
         "features": [
-          "Frische Nudeln nach speziellen Hausrezept zubereitet und in schmackhafter Soße nach Türkischer Art eingelegt"
+          "3–4 Mezze Sorten + Brot",
+          "1 Warmkomponente (z.B. Börek oder Köfte)",
+          "1 Salat/Beilage",
+          "Beschilderung (optional)"
         ],
-        "image": "/images/gallery/WhatsApp Bild 2025-06-18 um 18.09.47_ce5ccdcd.jpg"
+        "image": ""
       },
       {
-        "title": "Süße Verführung",
-        "price": "4@ pro Schale",
-        "badge": "",
-        "desc": "Süß Speise",
+        "title": "Family & Friends Buffet",
+        "price": "ab 22,90 € p.P.",
+        "badge": "Bestseller",
+        "desc": "Der perfekte Mix für Geburtstage & private Feiern – warm, sättigend, mit Mezze-Start.",
         "features": [
-          "Süße Verführung, mit sahne, Nuss und Erdbeere"
+          "Mezze-Platte (4–5 Sorten)",
+          "2 Warmgerichte (z.B. Köfte + Hähnchen)",
+          "Pilav & Ofengemüse",
+          "Dessert optional"
         ],
-        "image": "/images/gallery/WhatsApp Bild 2025-06-18 um 18.09.46_9cdcb142.jpg"
-      }
-    ],
-    "team": [
-      {
-        "name": "Mustermann",
-        "role": "Chef",
-        "text": "ChefKoch",
-        "initials": "MM"
-      }
-    ],
-    "pricing": [
-      {
-        "title": "süß Speise",
-        "hint": "Süsse Verführung",
-        "items": [
-          {
-            "label": "Süße Verführung",
-            "value": "4€"
-          }
-        ]
-      }
-    ],
-    "menu": [
-      {
-        "title": "Vorspeise",
-        "hint": "Linsensuppe",
-        "items": [
-          "Türkische Linsensuppe"
-        ]
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/gallery/koefte.jpg",
-        "caption": "Köfte Sandwich"
+        "image": ""
       },
       {
-        "image": "/images/gallery/Tantuni.jpg",
-        "caption": "Tantuni Sandwich"
-      }
-    ],
-    "social": [
+        "title": "Wedding Premium",
+        "price": "ab 29,90 € p.P.",
+        "badge": "Premium",
+        "desc": "Für Hochzeiten & große Events – beeindruckende Präsentation, starke Auswahl, stressfrei geplant.",
+        "features": [
+          "Premium Mezze (6–8 Sorten)",
+          "3 Warmgerichte + vegetarische Option",
+          "Live-Setup/Service optional",
+          "Dessert-Bar (Baklava/Sütlaç Mix)"
+        ],
+        "image": ""
+      },
       {
-        "title": "Catering",
-        "text": "Geburtstage, Firmen Events, Familien Veranstaltungen"
+        "title": "Streetfood Party",
+        "price": "ab 19,90 € p.P.",
+        "badge": "Hip",
+        "desc": "Locker, modern, schnell serviert – perfekt für Firmen-Events, Afterwork & Partys.",
+        "features": [
+          "Lahmacun / Pide Auswahl",
+          "Döner-Style Bowls & Saucen",
+          "Veggie Option (Falafel)",
+          "Fingerfood Add-on möglich"
+        ],
+        "image": ""
       }
     ],
-    "imprintHtml": "MissLeZet\neMail: Kunstai6333@gmail.com\nMobil: +49 1555"
+    "tr": [
+      {
+        "title": "Business Lunch",
+        "price": "Kişi başı 16,90 €’dan",
+        "badge": "Popüler",
+        "desc": "Ofis, toplantı ve ekip öğle yemeği için ideal. Hafif, kaliteli, şık sunum.",
+        "features": [
+          "3–4 çeşit meze + ekmek",
+          "1 sıcak seçenek (börek veya köfte)",
+          "1 salata/yan ürün",
+          "Etiketleme (opsiyonel)"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Family & Friends Büfe",
+        "price": "Kişi başı 22,90 €’dan",
+        "badge": "Çok satan",
+        "desc": "Doğum günü ve ev partileri için en iyi karışım – meze başlangıcı + doyurucu sıcaklar.",
+        "features": [
+          "Meze tabağı (4–5 çeşit)",
+          "2 sıcak yemek (köfte + tavuk gibi)",
+          "Pilav & fırın sebze",
+          "Tatlı opsiyonel"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Wedding Premium",
+        "price": "Kişi başı 29,90 €’dan",
+        "badge": "Premium",
+        "desc": "Düğün ve büyük etkinlikler için – güçlü menü, etkileyici sunum, rahat organizasyon.",
+        "features": [
+          "Premium meze (6–8 çeşit)",
+          "3 sıcak yemek + vejetaryen seçenek",
+          "Kurulum/servis opsiyonel",
+          "Tatlı barı (baklava/sütlaç)"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Streetfood Party",
+        "price": "Kişi başı 19,90 €’dan",
+        "badge": "Trend",
+        "desc": "Rahat, modern ve hızlı servis – şirket etkinliği ve partiler için.",
+        "features": [
+          "Lahmacun / pide seçkisi",
+          "Döner bowl & soslar",
+          "Veggie seçenek (falafel)",
+          "Fingerfood eklenebilir"
+        ],
+        "image": ""
+      }
+    ],
+    "en": [
+      {
+        "title": "Business Lunch",
+        "price": "from €16.90 pp",
+        "badge": "Popular",
+        "desc": "Perfect for office, meetings and team lunches. Light, premium, clean presentation.",
+        "features": [
+          "3–4 mezze items + bread",
+          "1 warm item (e.g., börek or köfte)",
+          "1 salad/side",
+          "Labeling (optional)"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Family & Friends Buffet",
+        "price": "from €22.90 pp",
+        "badge": "Bestseller",
+        "desc": "The ideal mix for birthdays & private events—mezze to start, hearty mains to finish.",
+        "features": [
+          "Mezze platter (4–5 items)",
+          "2 hot mains (e.g., köfte + chicken)",
+          "Pilav & roasted vegetables",
+          "Dessert optional"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Wedding Premium",
+        "price": "from €29.90 pp",
+        "badge": "Premium",
+        "desc": "For weddings & bigger events—impressive presentation, strong variety, stress-free planning.",
+        "features": [
+          "Premium mezze (6–8 items)",
+          "3 hot mains + vegetarian option",
+          "Setup/service optional",
+          "Dessert bar (baklava / sütlaç mix)"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Streetfood Party",
+        "price": "from €19.90 pp",
+        "badge": "Hip",
+        "desc": "Casual, modern, fast service—great for corporate events, afterwork and parties.",
+        "features": [
+          "Lahmacun / pide selection",
+          "Döner-style bowls & sauces",
+          "Veggie option (falafel)",
+          "Fingerfood add-on available"
+        ],
+        "image": ""
+      }
+    ]
   },
-  "tr": {
-    "brand": {
-      "name": "MissLeZet",
-      "tagline": "MissLeZet — Türk lezzetlerinin ruhu beslediği, her gülümsemeyi tatlandırdığı adres."
-    },
-    "contact": {
-      "city": "Rüsselsheim",
-      "phone": "+49 155561363071",
-      "email": "kunstai6333@gmail.com"
-    },
-    "hero": {
-      "kicker": "Her tabakta Türkiye’den bir tat.",
-      "headline": "Türkiye’den bir lokma.",
-      "sub": "MissLeZet, Türk mutfağının zenginliğini tabağınıza taşıyor — taze, otantik, unutulmaz!"
-    },
-    "about": {
-      "text": "MissLeZet’te her şey, büyük bir tutkuyla hazırladığımız otantik Türk lezzetleri üzerine kurulu. Klasik mezelerden doyurucu ana yemeklere, tatlı cazibelere kadar — tabağınıza Türkiye’den bir parça taşıyoruz. Hedefimiz: Her lokmada yüzünüzde bir tebessüm bırakmak!",
-      "bullets": [
-        "Taptaze ve ev yapımı",
-        "Nesilden nesile aktarılan özgün aile tarifleri",
-        "Her gün özenle hazırlanır"
-      ]
-    },
-    "imprintHtml": "MissLeZet\neMail: Kunstai6333@gmail.com\nMobil: +49 1555"
-  },
-  "en": {
-    "brand": {
-      "name": "MissLeZet",
-      "tagline": "MissLeZet — The place where Turkish delights feed the soul and sweeten every smile."
-    },
-    "contact": {
-      "city": "Rüsselsheim",
-      "phone": "+49 155561363071",
-      "email": "kunstai6333@gmail.com"
-    },
-    "hero": {
-      "kicker": "A taste of Turkey in every dish.",
-      "headline": "A taste of Türkiye.",
-      "sub": "MissLeZet delivers the rich flavors of Turkish cuisine right to your plate — fresh, authentic, unforgettable!"
-    },
-    "about": {
-      "text": "MissLeZet, it’s all about authentic Turkish flavors crafted with passion. From classic meze and hearty mains to irresistible desserts — we bring a taste of Türkiye straight to your plate. Our mission: to make you smile with every bite!",
-      "bullets": [
-        "Taptaze ve ev yapımı",
-        "Nesilden nesile aktarılan özgün aile tarifleri",
-        "Her gün özenle hazırlanır"
-      ]
-    },
-    "imprintHtml": "MissLeZet\neMail: Kunstai6333@gmail.com\nMobil: +49 1555"
+  "team": { "de": [], "tr": [], "en": [] },
+  "pricing": { "de": [], "tr": [], "en": [] },
+  "menu": { "de": [], "tr": [], "en": [] },
+  "gallery": { "de": [], "tr": [], "en": [] },
+  "social": { "de": [], "tr": [], "en": [] },
+  "imprintHtml": {
+    "de": "<b>Angaben gemäß § 5 TMG</b><br>Miss Lezet (Inhaber/in: [Name])<br>[Straße Hausnr.]<br>[PLZ Ort]<br><br><b>Kontakt</b><br>Telefon: [+49 …]<br>E-Mail: [info@misslezet.de]",
+    "tr": "<b>Yasal Bilgiler</b><br>Miss Lezet ([Ad Soyad])<br>[Adres]<br><br><b>İletişim</b><br>Telefon: [+49 …]<br>E-posta: [info@misslezet.de]",
+    "en": "<b>Legal notice</b><br>Miss Lezet ([Owner])<br>[Address]<br><br><b>Contact</b><br>Phone: [+49 …]<br>Email: [info@misslezet.de]"
   }
 }
