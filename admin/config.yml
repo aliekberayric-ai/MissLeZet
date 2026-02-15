@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: aliekberayric-ai/Miss-Lezet
   branch: main
 
 media_folder: "images/gallery"
@@ -123,3 +124,4 @@ collections:
               - { label: "Text", name: "text", widget: "string" }
 
           - { label: "Impressum (HTML)", name: "imprintHtml", widget: "text", i18n: true }
+
