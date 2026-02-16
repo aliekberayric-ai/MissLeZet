@@ -1,6 +1,10 @@
 {
   "brand": {
-    "name": { "de": "Miss Lezet", "tr": "Miss Lezet", "en": "Miss Lezet" },
+    "name": {
+      "de": "Miss Lezet",
+      "tr": "Miss Lezet",
+      "en": "Miss Lezet"
+    },
     "tagline": {
       "de": "Türkisches Premium-Catering • Frisch • Hausgemacht",
       "tr": "Türk Premium Catering • Taze • Ev yapımı",
@@ -8,8 +12,16 @@
     }
   },
   "contact": {
-    "city": { "de": "Berlin", "tr": "Berlin", "en": "Berlin" },
-    "phone": { "de": "+49 …", "tr": "+49 …", "en": "+49 …" },
+    "city": {
+      "de": "Rüsselsheim",
+      "tr": "Rüsselsheim",
+      "en": "Rüsselsheim"
+    },
+    "phone": {
+      "de": "+49 …",
+      "tr": "+49 …",
+      "en": "+49 …"
+    },
     "email": "info@misslezet.de"
   },
   "hero": {
@@ -52,6 +64,16 @@
         "Transparent pricing & fair portions"
       ]
     }
+  },
+  "imprintHtml": {
+    "de": "<b>Angaben gemäß § 5 TMG</b><br>Miss Lezet (Inhaber/in: [Name])<br>[Straße Hausnr.]<br>[PLZ Ort]<br><br><b>Kontakt</b><br>Telefon: [+49 …]<br>E-Mail: [info@misslezet.de]",
+    "tr": "<b>Yasal Bilgiler</b><br>Miss Lezet ([Ad Soyad])<br>[Adres]<br><br><b>İletişim</b><br>Telefon: [+49 …]<br>E-posta: [info@misslezet.de]",
+    "en": "<b>Legal notice</b><br>Miss Lezet ([Owner])<br>[Address]<br><br><b>Contact</b><br>Phone: [+49 …]<br>Email: [info@misslezet.de]"
+  },
+  "pricing": {
+    "en": [],
+    "tr": [],
+    "de": []
   },
   "packages": {
     "de": [
@@ -217,14 +239,24 @@
       }
     ]
   },
-  "team": { "de": [], "tr": [], "en": [] },
-  "pricing": { "de": [], "tr": [], "en": [] },
-  "menu": { "de": [], "tr": [], "en": [] },
-  "gallery": { "de": [], "tr": [], "en": [] },
-  "social": { "de": [], "tr": [], "en": [] },
-  "imprintHtml": {
-    "de": "<b>Angaben gemäß § 5 TMG</b><br>Miss Lezet (Inhaber/in: [Name])<br>[Straße Hausnr.]<br>[PLZ Ort]<br><br><b>Kontakt</b><br>Telefon: [+49 …]<br>E-Mail: [info@misslezet.de]",
-    "tr": "<b>Yasal Bilgiler</b><br>Miss Lezet ([Ad Soyad])<br>[Adres]<br><br><b>İletişim</b><br>Telefon: [+49 …]<br>E-posta: [info@misslezet.de]",
-    "en": "<b>Legal notice</b><br>Miss Lezet ([Owner])<br>[Address]<br><br><b>Contact</b><br>Phone: [+49 …]<br>Email: [info@misslezet.de]"
+  "team": {
+    "de": [],
+    "tr": [],
+    "en": []
+  },
+  "menu": {
+    "de": [],
+    "tr": [],
+    "en": []
+  },
+  "gallery": {
+    "de": [],
+    "tr": [],
+    "en": []
+  },
+  "social": {
+    "de": [],
+    "tr": [],
+    "en": []
   }
 }
