@@ -16,7 +16,7 @@ collections:
     label: "Website Inhalte"
     i18n: true
     files:
-      - file: "content.json"
+      - file: "MissLeZet/content.json"
         label: "Inhalte (DE/TR/EN)"
         name: "content"
         i18n: true
@@ -124,5 +124,6 @@ collections:
               - { label: "Text", name: "text", widget: "string" }
 
           - { label: "Impressum (HTML)", name: "imprintHtml", widget: "text", i18n: true }
+
 
 
