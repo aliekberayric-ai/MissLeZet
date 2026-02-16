@@ -121,7 +121,7 @@
           "1 Salat/Beilage",
           "Beschilderung (optional)"
         ],
-        "image": "/images/gallery/Lahmacun.jpeg"
+        "image": "images/gallery/Lahmacun.jpeg"
       },
       {
         "title": "Family & Friends Buffet",
@@ -134,7 +134,7 @@
           "Pilav & Ofengemüse",
           "Dessert optional"
         ],
-        "image": "/images/gallery/KofteSandwicvh.jpeg"
+        "image": "images/gallery/KofteSandwicvh.jpeg"
       },
       {
         "title": "Wedding Premium",
@@ -147,7 +147,7 @@
           "Live-Setup/Service optional",
           "Dessert-Bar (Baklava/Sütlaç Mix)"
         ],
-        "image": "/images/gallery/Kisir2.jpeg"
+        "image": "images/gallery/Kisir2.jpeg"
       },
       {
         "title": "Streetfood Party",
@@ -160,7 +160,7 @@
           "Veggie Option (Falafel)",
           "Fingerfood Add-on möglich"
         ],
-        "image": "/images/gallery/TatliCilek.jpeg"
+        "image": "images/gallery/TatliCilek.jpeg"
       }
     ],
     "tr": [
@@ -337,19 +337,19 @@
   "gallery": {
     "de": [
       {
-        "image": "/images/gallery/koefte.jpg",
+        "image": "images/gallery/koefte.jpg",
         "caption": "f"
       }
     ],
     "tr": [
       {
-        "image": "/images/gallery/Tantuni.jpg",
+        "image": "images/gallery/Tantuni.jpg",
         "caption": "e"
       }
     ],
     "en": [
       {
-        "image": "/images/gallery/Tantuni.jpg",
+        "image": "images/gallery/Tantuni.jpg",
         "caption": "d"
       }
     ]
