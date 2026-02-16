@@ -4,7 +4,7 @@ backend:
   branch: main
 
 media_folder: images/gallery
-public_folder: /images/gallery
+public_folder: images/gallery
 
 collections:
   - name: site
@@ -554,3 +554,4 @@ collections:
                   - label: Text
                     name: text
                     widget: string
+
