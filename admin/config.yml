@@ -11,7 +11,7 @@ collections:
     label: "Website Inhalte"
     files:
       - file: "content.json"
-        label: "Inhalte (DE/TR/EN in einem File)"
+        label: "Inhalte (DE/TR/EN)"
         name: "content"
         format: "json"
         fields:
@@ -26,6 +26,7 @@ collections:
                   - { label: "DE", name: "de", widget: "string" }
                   - { label: "TR", name: "tr", widget: "string" }
                   - { label: "EN", name: "en", widget: "string" }
+
               - label: "Tagline"
                 name: "tagline"
                 widget: "object"
@@ -45,6 +46,7 @@ collections:
                   - { label: "DE", name: "de", widget: "string" }
                   - { label: "TR", name: "tr", widget: "string" }
                   - { label: "EN", name: "en", widget: "string" }
+
               - label: "Telefon"
                 name: "phone"
                 widget: "object"
@@ -53,6 +55,7 @@ collections:
                   - { label: "DE", name: "de", widget: "string", required: false }
                   - { label: "TR", name: "tr", widget: "string", required: false }
                   - { label: "EN", name: "en", widget: "string", required: false }
+
               - { label: "E-Mail", name: "email", widget: "string", required: false }
 
           - label: "Hero"
@@ -66,6 +69,7 @@ collections:
                   - { label: "DE", name: "de", widget: "string" }
                   - { label: "TR", name: "tr", widget: "string" }
                   - { label: "EN", name: "en", widget: "string" }
+
               - label: "Headline"
                 name: "headline"
                 widget: "object"
@@ -73,6 +77,7 @@ collections:
                   - { label: "DE", name: "de", widget: "string" }
                   - { label: "TR", name: "tr", widget: "string" }
                   - { label: "EN", name: "en", widget: "string" }
+
               - label: "Text"
                 name: "sub"
                 widget: "object"
@@ -92,6 +97,7 @@ collections:
                   - { label: "DE", name: "de", widget: "text" }
                   - { label: "TR", name: "tr", widget: "text" }
                   - { label: "EN", name: "en", widget: "text" }
+
               - label: "Bullets"
                 name: "bullets"
                 widget: "object"
@@ -109,227 +115,235 @@ collections:
                     widget: "list"
                     field: { label: "Bullet", name: "item", widget: "string" }
 
+          - label: "Impressum (HTML)"
+            name: "imprintHtml"
+            widget: "object"
+            fields:
+              - { label: "DE", name: "de", widget: "text" }
+              - { label: "TR", name: "tr", widget: "text" }
+              - { label: "EN", name: "en", widget: "text" }
+
+          - label: "Preise"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Positionen"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Preis", name: "value", widget: "string" }
+
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Positionen"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Preis", name: "value", widget: "string" }
+
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Positionen"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Preis", name: "value", widget: "string" }
+
           - label: "Pakete"
-  name: "packages"
-  widget: "object"
-  fields:
-    - label: "DE"
-      name: "de"
-      widget: "list"
-      summary: "{{fields.title}} — {{fields.price}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Preis", name: "price", widget: "string" }
-        - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-        - { label: "Beschreibung", name: "desc", widget: "text" }
-        - label: "Features"
-          name: "features"
-          widget: "list"
-          field: { label: "Feature", name: "item", widget: "string" }
-        - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+            name: "packages"
+            widget: "object"
+            fields:
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.title}} — {{fields.price}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Preis", name: "price", widget: "string" }
+                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
+                  - { label: "Beschreibung", name: "desc", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "item", widget: "string" }
+                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
 
-    - label: "TR"
-      name: "tr"
-      widget: "list"
-      summary: "{{fields.title}} — {{fields.price}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Preis", name: "price", widget: "string" }
-        - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-        - { label: "Beschreibung", name: "desc", widget: "text" }
-        - label: "Features"
-          name: "features"
-          widget: "list"
-          field: { label: "Feature", name: "item", widget: "string" }
-        - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.title}} — {{fields.price}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Preis", name: "price", widget: "string" }
+                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
+                  - { label: "Beschreibung", name: "desc", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "item", widget: "string" }
+                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
 
-    - label: "EN"
-      name: "en"
-      widget: "list"
-      summary: "{{fields.title}} — {{fields.price}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Preis", name: "price", widget: "string" }
-        - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-        - { label: "Beschreibung", name: "desc", widget: "text" }
-        - label: "Features"
-          name: "features"
-          widget: "list"
-          field: { label: "Feature", name: "item", widget: "string" }
-        - { label: "Bild (optional)", name: "image", widget: "image", required: false }
-
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.title}} — {{fields.price}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Preis", name: "price", widget: "string" }
+                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
+                  - { label: "Beschreibung", name: "desc", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "item", widget: "string" }
+                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
 
           - label: "Mitarbeiter"
-  name: "team"
-  widget: "object"
-  fields:
-    - label: "DE"
-      name: "de"
-      widget: "list"
-      summary: "{{fields.name}} — {{fields.role}}"
-      fields:
-        - { label: "Name", name: "name", widget: "string" }
-        - { label: "Rolle", name: "role", widget: "string" }
-        - { label: "Beschreibung", name: "text", widget: "text" }
-        - { label: "Initialen", name: "initials", widget: "string", required: false }
+            name: "team"
+            widget: "object"
+            fields:
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.role}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Rolle", name: "role", widget: "string" }
+                  - { label: "Beschreibung", name: "text", widget: "text" }
+                  - { label: "Initialen", name: "initials", widget: "string", required: false }
 
-    - label: "TR"
-      name: "tr"
-      widget: "list"
-      summary: "{{fields.name}} — {{fields.role}}"
-      fields:
-        - { label: "Name", name: "name", widget: "string" }
-        - { label: "Rolle", name: "role", widget: "string" }
-        - { label: "Beschreibung", name: "text", widget: "text" }
-        - { label: "Initialen", name: "initials", widget: "string", required: false }
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.role}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Rolle", name: "role", widget: "string" }
+                  - { label: "Beschreibung", name: "text", widget: "text" }
+                  - { label: "Initialen", name: "initials", widget: "string", required: false }
 
-    - label: "EN"
-      name: "en"
-      widget: "list"
-      summary: "{{fields.name}} — {{fields.role}}"
-      fields:
-        - { label: "Name", name: "name", widget: "string" }
-        - { label: "Rolle", name: "role", widget: "string" }
-        - { label: "Beschreibung", name: "text", widget: "text" }
-        - { label: "Initialen", name: "initials", widget: "string", required: false }
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.role}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Rolle", name: "role", widget: "string" }
+                  - { label: "Beschreibung", name: "text", widget: "text" }
+                  - { label: "Initialen", name: "initials", widget: "string", required: false }
 
           - label: "Menü"
             name: "menu"
-            widget: "list"
-            summary: "{{fields.title.de}}"
+            widget: "object"
             fields:
-              - label: "Kategorie"
-                name: "title"
-                widget: "object"
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.title}}"
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
-              - label: "Hinweis"
-                name: "hint"
-                widget: "object"
-                required: false
-                fields:
-                  - { label: "DE", name: "de", widget: "string", required: false }
-                  - { label: "TR", name: "tr", widget: "string", required: false }
-                  - { label: "EN", name: "en", widget: "string", required: false }
-              - label: "Items (Chips)"
-                name: "items"
-                widget: "object"
-                fields:
-                  - label: "DE"
-                    name: "de"
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Items (Chips)"
+                    name: "items"
                     widget: "list"
                     field: { label: "Item", name: "item", widget: "string" }
-                  - label: "TR"
-                    name: "tr"
+
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Items (Chips)"
+                    name: "items"
                     widget: "list"
                     field: { label: "Item", name: "item", widget: "string" }
-                  - label: "EN"
-                    name: "en"
+
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Kategorie", name: "title", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - label: "Items (Chips)"
+                    name: "items"
                     widget: "list"
                     field: { label: "Item", name: "item", widget: "string" }
 
           - label: "Galerie"
-  name: "gallery"
-  widget: "object"
-  fields:
-    - label: "DE"
-      name: "de"
-      widget: "list"
-      summary: "{{fields.caption}}"
-      fields:
-        - { label: "Bild", name: "image", widget: "image" }
-        - { label: "Titel", name: "caption", widget: "string" }
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "Bild", name: "image", widget: "image" }
+                  - { label: "Titel", name: "caption", widget: "string" }
 
-    - label: "TR"
-      name: "tr"
-      widget: "list"
-      summary: "{{fields.caption}}"
-      fields:
-        - { label: "Bild", name: "image", widget: "image" }
-        - { label: "Titel", name: "caption", widget: "string" }
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "Bild", name: "image", widget: "image" }
+                  - { label: "Titel", name: "caption", widget: "string" }
 
-    - label: "EN"
-      name: "en"
-      widget: "list"
-      summary: "{{fields.caption}}"
-      fields:
-        - { label: "Bild", name: "image", widget: "image" }
-        - { label: "Titel", name: "caption", widget: "string" }
-
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "Bild", name: "image", widget: "image" }
+                  - { label: "Titel", name: "caption", widget: "string" }
 
           - label: "Social Proof"
-  name: "social"
-  widget: "object"
-  fields:
-    - label: "DE"
-      name: "de"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Text", name: "text", widget: "string" }
+            name: "social"
+            widget: "object"
+            fields:
+              - label: "DE"
+                name: "de"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
 
-    - label: "TR"
-      name: "tr"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Text", name: "text", widget: "string" }
+              - label: "TR"
+                name: "tr"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
 
-    - label: "EN"
-      name: "en"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Titel", name: "title", widget: "string" }
-        - { label: "Text", name: "text", widget: "string" }
-
-
-- label: "Preise"
-  name: "pricing"
-  widget: "object"
-  fields:
-    - label: "DE"
-      name: "de"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Kategorie", name: "title", widget: "string" }
-        - { label: "Hinweis", name: "hint", widget: "string", required: false }
-        - label: "Positionen"
-          name: "items"
-          widget: "list"
-          fields:
-            - { label: "Label", name: "label", widget: "string" }
-            - { label: "Preis", name: "value", widget: "string" }
-
-    - label: "TR"
-      name: "tr"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Kategorie", name: "title", widget: "string" }
-        - { label: "Hinweis", name: "hint", widget: "string", required: false }
-        - label: "Positionen"
-          name: "items"
-          widget: "list"
-          fields:
-            - { label: "Label", name: "label", widget: "string" }
-            - { label: "Preis", name: "value", widget: "string" }
-
-    - label: "EN"
-      name: "en"
-      widget: "list"
-      summary: "{{fields.title}}"
-      fields:
-        - { label: "Kategorie", name: "title", widget: "string" }
-        - { label: "Hinweis", name: "hint", widget: "string", required: false }
-        - label: "Positionen"
-          name: "items"
-          widget: "list"
-          fields:
-            - { label: "Label", name: "label", widget: "string" }
-            - { label: "Preis", name: "value", widget: "string" }
+              - label: "EN"
+                name: "en"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
