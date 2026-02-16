@@ -71,9 +71,42 @@
     "en": "<b>Legal notice</b><br>Miss Lezet ([Owner])<br>[Address]<br><br><b>Contact</b><br>Phone: [+49 …]<br>Email: [info@misslezet.de]"
   },
   "pricing": {
-    "en": [],
-    "tr": [],
-    "de": []
+    "de": [
+      {
+        "title": "Süsses",
+        "hint": "",
+        "items": [
+          {
+            "label": "Tatli",
+            "value": "4"
+          }
+        ]
+      }
+    ],
+    "tr": [
+      {
+        "title": "Tatli",
+        "hint": "g",
+        "items": [
+          {
+            "label": "rrr",
+            "value": "44"
+          }
+        ]
+      }
+    ],
+    "en": [
+      {
+        "title": "swets",
+        "hint": "",
+        "items": [
+          {
+            "label": "sweets",
+            "value": "7"
+          }
+        ]
+      }
+    ]
   },
   "packages": {
     "de": [
@@ -88,7 +121,7 @@
           "1 Salat/Beilage",
           "Beschilderung (optional)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
       },
       {
         "title": "Family & Friends Buffet",
@@ -101,7 +134,7 @@
           "Pilav & Ofengemüse",
           "Dessert optional"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
       },
       {
         "title": "Wedding Premium",
@@ -114,7 +147,7 @@
           "Live-Setup/Service optional",
           "Dessert-Bar (Baklava/Sütlaç Mix)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
       },
       {
         "title": "Streetfood Party",
@@ -127,7 +160,7 @@
           "Veggie Option (Falafel)",
           "Fingerfood Add-on möglich"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
       }
     ],
     "tr": [
@@ -142,7 +175,7 @@
           "1 salata/yan ürün",
           "Etiketleme (opsiyonel)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
       },
       {
         "title": "Family & Friends Büfe",
@@ -155,7 +188,7 @@
           "Pilav & fırın sebze",
           "Tatlı opsiyonel"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10 (2).jpeg"
       },
       {
         "title": "Wedding Premium",
@@ -240,23 +273,105 @@
     ]
   },
   "team": {
-    "de": [],
-    "tr": [],
-    "en": []
+    "de": [
+      {
+        "name": "hatice",
+        "role": "chef",
+        "text": "hhh",
+        "initials": ""
+      }
+    ],
+    "tr": [
+      {
+        "name": "hatice",
+        "role": "chef",
+        "text": "hhh",
+        "initials": ""
+      }
+    ],
+    "en": [
+      {
+        "name": "hatice",
+        "role": "chef",
+        "text": "www",
+        "initials": ""
+      }
+    ]
   },
   "menu": {
-    "de": [],
-    "tr": [],
-    "en": []
+    "de": [
+      {
+        "title": "kat",
+        "hint": "",
+        "items": [
+          "item"
+        ]
+      },
+      {
+        "title": "kat",
+        "hint": "",
+        "items": [
+          "item"
+        ]
+      }
+    ],
+    "tr": [
+      {
+        "title": "kat",
+        "hint": "",
+        "items": [
+          "item"
+        ]
+      }
+    ],
+    "en": [
+      {
+        "title": "Kat",
+        "hint": "",
+        "items": [
+          "item"
+        ]
+      }
+    ]
   },
   "gallery": {
-    "de": [],
-    "tr": [],
-    "en": []
+    "de": [
+      {
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "f"
+      }
+    ],
+    "tr": [
+      {
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "e"
+      }
+    ],
+    "en": [
+      {
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "d"
+      }
+    ]
   },
   "social": {
-    "de": [],
-    "tr": [],
-    "en": []
+    "de": [
+      {
+        "title": "spcial",
+        "text": "c"
+      }
+    ],
+    "tr": [
+      {
+        "title": "special",
+        "text": "b"
+      }
+    ],
+    "en": [
+      {
+        "title": "special",
+        "text": "a"
+      }
+    ]
   }
 }
