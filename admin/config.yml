@@ -3,347 +3,554 @@ backend:
   repo: aliekberayric-ai/MissLeZet
   branch: main
 
-media_folder: "images/gallery"
-public_folder: "/images/gallery"
+media_folder: images/gallery
+public_folder: /images/gallery
 
 collections:
-  - name: "site"
-    label: "Website Inhalte"
+  - name: site
+    label: Website Inhalte
     files:
-      - file: "content.json"
-        label: "Inhalte (DE/TR/EN)"
-        name: "content"
-        format: "json"
+      - file: content.json
+        label: Inhalte (DE/TR/EN)
+        name: content
+        format: json
         fields:
-          - label: "Brand"
-            name: "brand"
-            widget: "object"
+          - label: Brand
+            name: brand
+            widget: object
             fields:
-              - label: "Website Name"
-                name: "name"
-                widget: "object"
+              - label: Website Name
+                name: name
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: string
+                  - label: TR
+                    name: tr
+                    widget: string
+                  - label: EN
+                    name: en
+                    widget: string
 
-              - label: "Tagline"
-                name: "tagline"
-                widget: "object"
+              - label: Tagline
+                name: tagline
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: string
+                  - label: TR
+                    name: tr
+                    widget: string
+                  - label: EN
+                    name: en
+                    widget: string
 
-          - label: "Kontakt"
-            name: "contact"
-            widget: "object"
+          - label: Kontakt
+            name: contact
+            widget: object
             fields:
-              - label: "Stadt/Ort"
-                name: "city"
-                widget: "object"
+              - label: Stadt/Ort
+                name: city
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: string
+                  - label: TR
+                    name: tr
+                    widget: string
+                  - label: EN
+                    name: en
+                    widget: string
 
-              - label: "Telefon"
-                name: "phone"
-                widget: "object"
+              - label: Telefon
+                name: phone
+                widget: object
                 required: false
                 fields:
-                  - { label: "DE", name: "de", widget: "string", required: false }
-                  - { label: "TR", name: "tr", widget: "string", required: false }
-                  - { label: "EN", name: "en", widget: "string", required: false }
+                  - label: DE
+                    name: de
+                    widget: string
+                    required: false
+                  - label: TR
+                    name: tr
+                    widget: string
+                    required: false
+                  - label: EN
+                    name: en
+                    widget: string
+                    required: false
 
-              - { label: "E-Mail", name: "email", widget: "string", required: false }
+              - label: E-Mail
+                name: email
+                widget: string
+                required: false
 
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
+          - label: Hero
+            name: hero
+            widget: object
             fields:
-              - label: "Kicker"
-                name: "kicker"
-                widget: "object"
+              - label: Kicker
+                name: kicker
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: string
+                  - label: TR
+                    name: tr
+                    widget: string
+                  - label: EN
+                    name: en
+                    widget: string
 
-              - label: "Headline"
-                name: "headline"
-                widget: "object"
+              - label: Headline
+                name: headline
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "string" }
-                  - { label: "TR", name: "tr", widget: "string" }
-                  - { label: "EN", name: "en", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: string
+                  - label: TR
+                    name: tr
+                    widget: string
+                  - label: EN
+                    name: en
+                    widget: string
 
-              - label: "Text"
-                name: "sub"
-                widget: "object"
+              - label: Text
+                name: sub
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "text" }
-                  - { label: "TR", name: "tr", widget: "text" }
-                  - { label: "EN", name: "en", widget: "text" }
+                  - label: DE
+                    name: de
+                    widget: text
+                  - label: TR
+                    name: tr
+                    widget: text
+                  - label: EN
+                    name: en
+                    widget: text
 
-          - label: "Über uns"
-            name: "about"
-            widget: "object"
+          - label: Über uns
+            name: about
+            widget: object
             fields:
-              - label: "Text"
-                name: "text"
-                widget: "object"
+              - label: Text
+                name: text
+                widget: object
                 fields:
-                  - { label: "DE", name: "de", widget: "text" }
-                  - { label: "TR", name: "tr", widget: "text" }
-                  - { label: "EN", name: "en", widget: "text" }
+                  - label: DE
+                    name: de
+                    widget: text
+                  - label: TR
+                    name: tr
+                    widget: text
+                  - label: EN
+                    name: en
+                    widget: text
 
-              - label: "Bullets"
-                name: "bullets"
-                widget: "object"
+              - label: Bullets
+                name: bullets
+                widget: object
                 fields:
-                  - label: "DE"
-                    name: "de"
-                    widget: "list"
-                    field: { label: "Bullet", name: "item", widget: "string" }
-                  - label: "TR"
-                    name: "tr"
-                    widget: "list"
-                    field: { label: "Bullet", name: "item", widget: "string" }
-                  - label: "EN"
-                    name: "en"
-                    widget: "list"
-                    field: { label: "Bullet", name: "item", widget: "string" }
+                  - label: DE
+                    name: de
+                    widget: list
+                    field:
+                      label: Bullet
+                      widget: string
+                  - label: TR
+                    name: tr
+                    widget: list
+                    field:
+                      label: Bullet
+                      widget: string
+                  - label: EN
+                    name: en
+                    widget: list
+                    field:
+                      label: Bullet
+                      widget: string
 
-          - label: "Impressum (HTML)"
-            name: "imprintHtml"
-            widget: "object"
+          - label: Impressum (HTML)
+            name: imprintHtml
+            widget: object
             fields:
-              - { label: "DE", name: "de", widget: "text" }
-              - { label: "TR", name: "tr", widget: "text" }
-              - { label: "EN", name: "en", widget: "text" }
+              - label: DE
+                name: de
+                widget: text
+              - label: TR
+                name: tr
+                widget: text
+              - label: EN
+                name: en
+                widget: text
 
-          - label: "Preise"
-            name: "pricing"
-            widget: "object"
+          - label: Preise
+            name: pricing
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Positionen"
-                    name: "items"
-                    widget: "list"
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Positionen
+                    name: items
+                    widget: list
                     fields:
-                      - { label: "Label", name: "label", widget: "string" }
-                      - { label: "Preis", name: "value", widget: "string" }
+                      - label: Label
+                        name: label
+                        widget: string
+                      - label: Preis
+                        name: value
+                        widget: string
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Positionen"
-                    name: "items"
-                    widget: "list"
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Positionen
+                    name: items
+                    widget: list
                     fields:
-                      - { label: "Label", name: "label", widget: "string" }
-                      - { label: "Preis", name: "value", widget: "string" }
+                      - label: Label
+                        name: label
+                        widget: string
+                      - label: Preis
+                        name: value
+                        widget: string
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Positionen"
-                    name: "items"
-                    widget: "list"
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Positionen
+                    name: items
+                    widget: list
                     fields:
-                      - { label: "Label", name: "label", widget: "string" }
-                      - { label: "Preis", name: "value", widget: "string" }
+                      - label: Label
+                        name: label
+                        widget: string
+                      - label: Preis
+                        name: value
+                        widget: string
 
-          - label: "Pakete"
-            name: "packages"
-            widget: "object"
+          - label: Pakete
+            name: packages
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.title}} — {{fields.price}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Preis", name: "price", widget: "string" }
-                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-                  - { label: "Beschreibung", name: "desc", widget: "text" }
-                  - label: "Features"
-                    name: "features"
-                    widget: "list"
-                    field: { label: "Feature", name: "item", widget: "string" }
-                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Preis
+                    name: price
+                    widget: string
+                  - label: Badge (optional)
+                    name: badge
+                    widget: string
+                    required: false
+                  - label: Beschreibung
+                    name: desc
+                    widget: text
+                  - label: Features
+                    name: features
+                    widget: list
+                    field:
+                      label: Feature
+                      widget: string
+                  - label: Bild (optional)
+                    name: image
+                    widget: image
+                    required: false
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.title}} — {{fields.price}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Preis", name: "price", widget: "string" }
-                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-                  - { label: "Beschreibung", name: "desc", widget: "text" }
-                  - label: "Features"
-                    name: "features"
-                    widget: "list"
-                    field: { label: "Feature", name: "item", widget: "string" }
-                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Preis
+                    name: price
+                    widget: string
+                  - label: Badge (optional)
+                    name: badge
+                    widget: string
+                    required: false
+                  - label: Beschreibung
+                    name: desc
+                    widget: text
+                  - label: Features
+                    name: features
+                    widget: list
+                    field:
+                      label: Feature
+                      widget: string
+                  - label: Bild (optional)
+                    name: image
+                    widget: image
+                    required: false
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.title}} — {{fields.price}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Preis", name: "price", widget: "string" }
-                  - { label: "Badge (optional)", name: "badge", widget: "string", required: false }
-                  - { label: "Beschreibung", name: "desc", widget: "text" }
-                  - label: "Features"
-                    name: "features"
-                    widget: "list"
-                    field: { label: "Feature", name: "item", widget: "string" }
-                  - { label: "Bild (optional)", name: "image", widget: "image", required: false }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Preis
+                    name: price
+                    widget: string
+                  - label: Badge (optional)
+                    name: badge
+                    widget: string
+                    required: false
+                  - label: Beschreibung
+                    name: desc
+                    widget: text
+                  - label: Features
+                    name: features
+                    widget: list
+                    field:
+                      label: Feature
+                      widget: string
+                  - label: Bild (optional)
+                    name: image
+                    widget: image
+                    required: false
 
-          - label: "Mitarbeiter"
-            name: "team"
-            widget: "object"
+          - label: Mitarbeiter
+            name: team
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.name}} — {{fields.role}}"
                 fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Rolle", name: "role", widget: "string" }
-                  - { label: "Beschreibung", name: "text", widget: "text" }
-                  - { label: "Initialen", name: "initials", widget: "string", required: false }
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Rolle
+                    name: role
+                    widget: string
+                  - label: Beschreibung
+                    name: text
+                    widget: text
+                  - label: Initialen
+                    name: initials
+                    widget: string
+                    required: false
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.name}} — {{fields.role}}"
                 fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Rolle", name: "role", widget: "string" }
-                  - { label: "Beschreibung", name: "text", widget: "text" }
-                  - { label: "Initialen", name: "initials", widget: "string", required: false }
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Rolle
+                    name: role
+                    widget: string
+                  - label: Beschreibung
+                    name: text
+                    widget: text
+                  - label: Initialen
+                    name: initials
+                    widget: string
+                    required: false
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.name}} — {{fields.role}}"
                 fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Rolle", name: "role", widget: "string" }
-                  - { label: "Beschreibung", name: "text", widget: "text" }
-                  - { label: "Initialen", name: "initials", widget: "string", required: false }
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Rolle
+                    name: role
+                    widget: string
+                  - label: Beschreibung
+                    name: text
+                    widget: text
+                  - label: Initialen
+                    name: initials
+                    widget: string
+                    required: false
 
-          - label: "Menü"
-            name: "menu"
-            widget: "object"
+          - label: Menü
+            name: menu
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Items (Chips)"
-                    name: "items"
-                    widget: "list"
-                    field: { label: "Item", name: "item", widget: "string" }
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    field:
+                      label: Item
+                      widget: string
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Items (Chips)"
-                    name: "items"
-                    widget: "list"
-                    field: { label: "Item", name: "item", widget: "string" }
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    field:
+                      label: Item
+                      widget: string
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Kategorie", name: "title", widget: "string" }
-                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
-                  - label: "Items (Chips)"
-                    name: "items"
-                    widget: "list"
-                    field: { label: "Item", name: "item", widget: "string" }
+                  - label: Kategorie
+                    name: title
+                    widget: string
+                  - label: Hinweis
+                    name: hint
+                    widget: string
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    field:
+                      label: Item
+                      widget: string
 
-          - label: "Galerie"
-            name: "gallery"
-            widget: "object"
+          - label: Galerie
+            name: gallery
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Bild", name: "image", widget: "image" }
-                  - { label: "Titel", name: "caption", widget: "string" }
+                  - label: Bild
+                    name: image
+                    widget: image
+                  - label: Titel
+                    name: caption
+                    widget: string
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Bild", name: "image", widget: "image" }
-                  - { label: "Titel", name: "caption", widget: "string" }
+                  - label: Bild
+                    name: image
+                    widget: image
+                  - label: Titel
+                    name: caption
+                    widget: string
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Bild", name: "image", widget: "image" }
-                  - { label: "Titel", name: "caption", widget: "string" }
+                  - label: Bild
+                    name: image
+                    widget: image
+                  - label: Titel
+                    name: caption
+                    widget: string
 
-          - label: "Social Proof"
-            name: "social"
-            widget: "object"
+          - label: Social Proof
+            name: social
+            widget: object
             fields:
-              - label: "DE"
-                name: "de"
-                widget: "list"
+              - label: DE
+                name: de
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Text", name: "text", widget: "string" }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Text
+                    name: text
+                    widget: string
 
-              - label: "TR"
-                name: "tr"
-                widget: "list"
+              - label: TR
+                name: tr
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Text", name: "text", widget: "string" }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Text
+                    name: text
+                    widget: string
 
-              - label: "EN"
-                name: "en"
-                widget: "list"
+              - label: EN
+                name: en
+                widget: list
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titel", name: "title", widget: "string" }
-                  - { label: "Text", name: "text", widget: "string" }
+                  - label: Titel
+                    name: title
+                    widget: string
+                  - label: Text
+                    name: text
+                    widget: string
