@@ -121,7 +121,7 @@
           "1 Salat/Beilage",
           "Beschilderung (optional)"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+        "image": ""
       },
       {
         "title": "Family & Friends Buffet",
@@ -134,7 +134,7 @@
           "Pilav & Ofengemüse",
           "Dessert optional"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+        "image": ""
       },
       {
         "title": "Wedding Premium",
@@ -147,7 +147,7 @@
           "Live-Setup/Service optional",
           "Dessert-Bar (Baklava/Sütlaç Mix)"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+        "image": ""
       },
       {
         "title": "Streetfood Party",
@@ -160,7 +160,7 @@
           "Veggie Option (Falafel)",
           "Fingerfood Add-on möglich"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+        "image": ""
       }
     ],
     "tr": [
@@ -175,7 +175,7 @@
           "1 salata/yan ürün",
           "Etiketleme (opsiyonel)"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+        "image": ""
       },
       {
         "title": "Family & Friends Büfe",
@@ -188,7 +188,7 @@
           "Pilav & fırın sebze",
           "Tatlı opsiyonel"
         ],
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.10 (2).jpeg"
+        "image": ""
       },
       {
         "title": "Wedding Premium",
@@ -337,19 +337,19 @@
   "gallery": {
     "de": [
       {
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "image": "/images/gallery/koefte.jpg",
         "caption": "f"
       }
     ],
     "tr": [
       {
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "image": "/images/gallery/Tantuni.jpg",
         "caption": "e"
       }
     ],
     "en": [
       {
-        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "image": "/images/gallery/Tantuni.jpg",
         "caption": "d"
       }
     ]
