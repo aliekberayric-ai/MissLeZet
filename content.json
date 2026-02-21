@@ -1,14 +1,14 @@
 {
   "brand": {
     "name": {
-      "de": "Miss Lezet",
-      "tr": "Miss Lezet",
-      "en": "Miss Lezet"
+      "de": "Miss Lezzet",
+      "tr": "Miss Lezzet",
+      "en": "Miss Lezzet"
     },
     "tagline": {
-      "de": "Türkisches Premium-Catering • Frisch • Hausgemacht",
-      "tr": "Türk Premium Catering • Taze • Ev yapımı",
-      "en": "Turkish Premium Catering • Fresh • Homemade"
+      "de": "Premium-Catering • Frisch • Hausgemacht",
+      "tr": "Premium Catering • Taze • Ev yapımı",
+      "en": "Premium Catering • Fresh • Homemade"
     }
   },
   "contact": {
