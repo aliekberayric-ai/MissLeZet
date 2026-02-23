@@ -438,12 +438,12 @@
                 {
                   "label": "Köfte (Sıcak)",
                   "price": 6.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
                 },
                 {
                   "label": "Vejetaryen sebze yemeği",
                   "price": 5.8,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -453,7 +453,7 @@
                 {
                   "label": "Baklava (Porsiyon)",
                   "price": 3.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             }
@@ -472,7 +472,7 @@
           "Pilav & fırın sebze",
           "Tatlı opsiyonel"
         ],
-        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
+        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
         "builder": {
           "currency": "EUR",
           "categories": [
@@ -482,12 +482,12 @@
                 {
                   "label": "İçli Köfte (Mini)",
                   "price": 3.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
                 },
                 {
                   "label": "Sigara Böreği",
                   "price": 2.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 }
               ]
             },
@@ -497,12 +497,12 @@
                 {
                   "label": "Meze Mix (4 çeşit)",
                   "price": 6.2,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 },
                 {
                   "label": "Salata (Mevsim)",
                   "price": 3.0,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -512,12 +512,12 @@
                 {
                   "label": "Köfte + Pilav",
                   "price": 9.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
                 },
                 {
                   "label": "Tavuk (Fırın/Izgara)",
                   "price": 8.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 }
               ]
             },
@@ -527,12 +527,12 @@
                 {
                   "label": "Sütlaç",
                   "price": 3.6,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 },
                 {
                   "label": "Baklava (Porsiyon)",
                   "price": 3.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             }
@@ -551,7 +551,7 @@
           "Kurulum/servis opsiyonel",
           "Tatlı barı (baklava/sütlaç)"
         ],
-        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg",
+        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg",
         "builder": {
           "currency": "EUR",
           "categories": [
@@ -561,12 +561,12 @@
                 {
                   "label": "Mini Lahmacun",
                   "price": 3.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 },
                 {
                   "label": "Meze Kanapeler",
                   "price": 4.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -576,7 +576,7 @@
                 {
                   "label": "Premium Meze (6 çeşit)",
                   "price": 9.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -586,17 +586,17 @@
                 {
                   "label": "Kuzu (opsiyon)",
                   "price": 13.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
                 },
                 {
                   "label": "Tavuk + Köfte Kombi",
                   "price": 12.2,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
                 },
                 {
                   "label": "Vejetaryen ana yemek",
                   "price": 10.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -606,7 +606,7 @@
                 {
                   "label": "Tatlı Bar Mix",
                   "price": 6.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             }
@@ -625,7 +625,7 @@
           "Veggie seçenek (falafel)",
           "Fingerfood eklenebilir"
         ],
-        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg",
+        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg",
         "builder": {
           "currency": "EUR",
           "categories": [
@@ -635,12 +635,12 @@
                 {
                   "label": "Falafel (Mini)",
                   "price": 2.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 },
                 {
                   "label": "Mini Pide",
                   "price": 3.4,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 }
               ]
             },
@@ -650,7 +650,7 @@
                 {
                   "label": "Humus + Ezme",
                   "price": 3.4,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -660,12 +660,12 @@
                 {
                   "label": "Döner Bowl",
                   "price": 8.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
                 },
                 {
                   "label": "Mini Lahmacun",
                   "price": 7.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 }
               ]
             },
@@ -675,7 +675,7 @@
                 {
                   "label": "Baklava (Porsiyon)",
                   "price": 3.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             }
@@ -696,7 +696,7 @@
           "1 salad/side",
           "Labeling (optional)"
         ],
-        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg",
+        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg",
         "builder": {
           "currency": "EUR",
           "categories": [
@@ -706,12 +706,12 @@
                 {
                   "label": "Crispy börek rolls",
                   "price": 2.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
                 },
                 {
                   "label": "Mini köfte skewers",
                   "price": 3.2,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
                 }
               ]
             },
@@ -721,12 +721,12 @@
                 {
                   "label": "Hummus",
                   "price": 1.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 },
                 {
                   "label": "Cacik (yogurt & cucumber)",
                   "price": 1.7,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -736,12 +736,12 @@
                 {
                   "label": "Warm köfte",
                   "price": 6.5,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
                 },
                 {
                   "label": "Vegetarian vegetable dish",
                   "price": 5.8,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             },
@@ -751,7 +751,7 @@
                 {
                   "label": "Baklava (portion)",
                   "price": 3.9,
-                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                  "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
                 }
               ]
             }
@@ -770,7 +770,7 @@
           "Pilav & roasted vegetables",
           "Dessert optional"
         ],
-        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
+        "image": "images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
         "builder": {
           "currency": "EUR",
           "categories": [
