@@ -111,55 +111,47 @@
   "packages": {
     "de": [
      
+{
+  "title": "Business Lunch",
+  "price": "ab 16,90 € p.P.",
+  "badge": "Beliebt",
+  "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
+  "features": ["..."],
+  "image": "",
+  "builder": {
+    "currency": "EUR",
+    "categories": [
       {
-        "title": "Business Lunch",
-        "price": "ab 16,90 € p.P.",
-        "badge": "Beliebt",
-        "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
-        "features": [
-          "3–4 Mezze Sorten + Brot",
-          "1 Warmkomponente (z.B. Börek oder Köfte)",
-          "1 Salat/Beilage",
-          "Beschilderung (optional)"
-        ],
-        "image": "images/gallery/Lahmacun.jpeg",
-    
-        "builder": {
-        "currency": "EUR",
-        "categories": [
-          {
-            "title": "Fingerfood",
-            "items": [
-              { "label": "Mini Börek (3 Stück)", "price": 4.5 },
-              { "label": "Sigara Böreği", "price": 3.5 }
-                    ]
-           },
+        "title": "Fingerfood",
+        "items": [
+          { "label": "Mini Börek (3 Stück)", "price": 4.5 },
+          { "label": "Sigara Böreği", "price": 3.5 }
+        ]
+      },
       {
         "title": "Vorspeisen",
         "items": [
           { "label": "Hummus", "price": 3.0 },
           { "label": "Haydari", "price": 3.0 }
-                 ]
+        ]
       },
-          
       {
         "title": "Hauptgericht",
         "items": [
           { "label": "Köfte", "price": 6.5 },
           { "label": "Hähnchen Spieß", "price": 6.5 }
-                 ]
+        ]
       },
-          
       {
         "title": "Dessert",
         "items": [
           { "label": "Baklava (2 Stück)", "price": 4.0 },
           { "label": "Sütlaç", "price": 4.5 }
-                 ]
+        ]
       }
-                        ]
-          
-                },
+    ]
+  }
+}
 {
         "title": "Family & Friends Buffet",
         "price": "ab 22,90 € p.P.",
