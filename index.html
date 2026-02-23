@@ -666,28 +666,43 @@
   </main>
 
   <!-- ===== NEU: Paket-Konfigurator Modal ===== -->
-  <div class="modal" id="pkgModal" aria-hidden="true">
-    <div class="modalInner" role="dialog" aria-label="Paket zusammenstellen">
-      <div class="modalHead">
-        <b id="pkgModalTitle">Paket zusammenstellen</b>
-        <button class="modalClose" id="pkgModalClose" type="button">✕</button>
+  <div class="modalBody">
+  <div class="hint" id="pkgModalDesc"></div>
+
+  <div class="modalGrid">
+    <!-- LINKS: Auswahl -->
+    <div>
+      <div id="pkgBuilder"></div>
+    </div>
+
+    <!-- RECHTS: Rechner -->
+    <div class="calcCard">
+      <label for="pkgPeople" style="margin:0 0 6px; display:block; color:var(--muted); font-size:12px">Personenanzahl</label>
+      <input class="inputMini" id="pkgPeople" type="number" min="1" placeholder="z.B. 35" />
+
+      <div class="calcRow" style="margin-top:10px">
+        <span>Betrag pro Person</span>
+        <b id="pkgPerPerson" class="calcBig">0,00 €</b>
       </div>
-      <div class="modalBody">
-        <div class="hint" id="pkgModalDesc"></div>
-        <div id="pkgBuilder"></div>
 
-        <div class="calcResult">
-          <div><b>Gesamtsumme:</b> <span id="pkgTotal">0,00 €</span></div>
-          <div class="hint" id="pkgTotalHint">Wähle Speisen aus, um die Summe zu berechnen.</div>
-        </div>
+      <div class="calcRow">
+        <span>Gesamtbetrag</span>
+        <b id="pkgTotal" class="calcBig">0,00 €</b>
+      </div>
 
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-          <button class="btn" type="button" id="pkgReset">Reset</button>
-          <a class="btn primary" href="#kontakt" id="pkgToForm">Als Anfrage übernehmen →</a>
-        </div>
+      <div class="hint" id="pkgTotalHint" style="margin-top:8px">Wähle Speisen aus, um zu berechnen.</div>
+
+      <div class="modalActions">
+        <button class="btn" type="button" id="pkgReset">Reset</button>
+        <button class="btn primary" type="button" id="pkgApply">Übernehmen →</button>
+      </div>
+
+      <div class="hint" style="margin-top:10px">
+        Tipp: „Übernehmen“ schreibt die Auswahl automatisch ins Kontaktformular.
       </div>
     </div>
   </div>
+</div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -1262,6 +1277,7 @@ Summe: ${fmtCurrency(sum, currency)}
   </script>
 </body>
 </html>
+
 
 
 
