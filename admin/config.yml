@@ -295,6 +295,39 @@ collections:
                     widget: image
                     required: false
 
+                  # ✅ NEU: Paket-Konfigurator (Popup-Liste + Preise)
+                  - label: Paket-Konfigurator (Popup)
+                    name: builder
+                    widget: object
+                    required: false
+                    fields:
+                      - label: Währung (z.B. EUR)
+                        name: currency
+                        widget: string
+                        required: false
+                        default: "EUR"
+                      - label: Kategorien
+                        name: categories
+                        widget: list
+                        summary: "{{fields.title}}"
+                        fields:
+                          - label: Kategorie Titel
+                            name: title
+                            widget: string
+                          - label: Speisen
+                            name: items
+                            widget: list
+                            summary: "{{fields.label}} — {{fields.price}}"
+                            fields:
+                              - label: Name
+                                name: label
+                                widget: string
+                              - label: Preis
+                                name: price
+                                widget: number
+                                value_type: float
+                                min: 0
+
               - label: TR
                 name: tr
                 widget: list
@@ -324,6 +357,39 @@ collections:
                     widget: image
                     required: false
 
+                  # ✅ NEU: Paket-Konfigurator (Popup-Liste + Preise)
+                  - label: Paket-Konfigurator (Popup)
+                    name: builder
+                    widget: object
+                    required: false
+                    fields:
+                      - label: Währung (z.B. EUR)
+                        name: currency
+                        widget: string
+                        required: false
+                        default: "EUR"
+                      - label: Kategorien
+                        name: categories
+                        widget: list
+                        summary: "{{fields.title}}"
+                        fields:
+                          - label: Kategorie Titel
+                            name: title
+                            widget: string
+                          - label: Speisen
+                            name: items
+                            widget: list
+                            summary: "{{fields.label}} — {{fields.price}}"
+                            fields:
+                              - label: Name
+                                name: label
+                                widget: string
+                              - label: Preis
+                                name: price
+                                widget: number
+                                value_type: float
+                                min: 0
+
               - label: EN
                 name: en
                 widget: list
@@ -352,6 +418,39 @@ collections:
                     name: image
                     widget: image
                     required: false
+
+                  # ✅ NEU: Paket-Konfigurator (Popup-Liste + Preise)
+                  - label: Paket-Konfigurator (Popup)
+                    name: builder
+                    widget: object
+                    required: false
+                    fields:
+                      - label: Währung (z.B. EUR)
+                        name: currency
+                        widget: string
+                        required: false
+                        default: "EUR"
+                      - label: Kategorien
+                        name: categories
+                        widget: list
+                        summary: "{{fields.title}}"
+                        fields:
+                          - label: Kategorie Titel
+                            name: title
+                            widget: string
+                          - label: Speisen
+                            name: items
+                            widget: list
+                            summary: "{{fields.label}} — {{fields.price}}"
+                            fields:
+                              - label: Name
+                                name: label
+                                widget: string
+                              - label: Preis
+                                name: price
+                                widget: number
+                                value_type: float
+                                min: 0
 
           - label: Mitarbeiter
             name: team
@@ -554,6 +653,3 @@ collections:
                   - label: Text
                     name: text
                     widget: string
-
-
-
