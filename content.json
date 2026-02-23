@@ -116,7 +116,12 @@
   "price": "ab 16,90 € p.P.",
   "badge": "Beliebt",
   "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
-  "features": ["..."],
+   "features": [
+          "Premium Mezze (6–8 Sorten)",
+          "3 Warmgerichte + vegetarische Option",
+          "Live-Setup/Service optional",
+          "Dessert-Bar (Baklava/Sütlaç Mix)"
+        ],
   "image": "",
   "builder": {
     "currency": "EUR",
