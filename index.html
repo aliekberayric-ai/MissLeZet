@@ -740,139 +740,176 @@
     lb.addEventListener("click", (e) => { if(e.target === lb) closeLb(); });
     window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLb(); });
 
+ 
     // ===== Paket-Konfigurator =====
-    const pkgModal = document.getElementById("pkgModal");
-    const pkgModalClose = document.getElementById("pkgModalClose");
-    const pkgModalTitle = document.getElementById("pkgModalTitle");
-    const pkgModalDesc = document.getElementById("pkgModalDesc");
-    const pkgBuilder = document.getElementById("pkgBuilder");
-    const pkgTotal = document.getElementById("pkgTotal");
-    const pkgTotalHint = document.getElementById("pkgTotalHint");
-    const pkgReset = document.getElementById("pkgReset");
-    const pkgToForm = document.getElementById("pkgToForm");
+const pkgModal = document.getElementById("pkgModal");
+const pkgModalClose = document.getElementById("pkgModalClose");
+const pkgModalTitle = document.getElementById("pkgModalTitle");
+const pkgModalDesc = document.getElementById("pkgModalDesc");
+const pkgBuilder = document.getElementById("pkgBuilder");
 
-    let currentPkg = null;
-    let selectedMap = new Map();
+const pkgPeople = document.getElementById("pkgPeople");
+const pkgPerPerson = document.getElementById("pkgPerPerson");
+const pkgTotal = document.getElementById("pkgTotal");
+const pkgTotalHint = document.getElementById("pkgTotalHint");
+const pkgReset = document.getElementById("pkgReset");
+const pkgApply = document.getElementById("pkgApply");
 
-    function fmtCurrency(val, currency="EUR"){
-      const num = Number(val || 0);
-      try{
-        return new Intl.NumberFormat("de-DE", { style:"currency", currency }).format(num);
-      }catch{
-        return `${num.toFixed(2)} €`;
-      }
-    }
-    function closePkgModal(){
-      pkgModal.style.display = "none";
-      pkgModal.setAttribute("aria-hidden", "true");
-    }
-    function updatePkgTotal(currency){
-      let sum = 0;
-      for (const v of selectedMap.values()) sum += Number(v.price || 0);
+let currentPkg = null;
+let selectedMap = new Map();
 
-      pkgTotal.textContent = fmtCurrency(sum, currency);
+function fmtCurrency(val, currency="EUR"){
+  const num = Number(val || 0);
+  try{
+    return new Intl.NumberFormat("de-DE", { style:"currency", currency }).format(num);
+  }catch{
+    return `${num.toFixed(2)} €`;
+  }
+}
+function closePkgModal(){
+  pkgModal.style.display = "none";
+  pkgModal.setAttribute("aria-hidden", "true");
+}
 
-      if (selectedMap.size === 0) {
-        pkgTotalHint.textContent = "Wähle Speisen aus, um die Summe zu berechnen.";
-      } else {
-        const items = Array.from(selectedMap.values()).map(x => `${x.label} (${fmtCurrency(x.price, currency)})`);
-        pkgTotalHint.textContent = `Ausgewählt: ${items.join(" · ")}`;
-      }
+function getPeople(){
+  const n = Number(pkgPeople?.value || 0);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
 
-      pkgToForm.onclick = () => {
-        const msg = document.getElementById("message");
-        if (msg && currentPkg){
-          const lines = Array.from(selectedMap.values())
-            .map(x => `- ${x.label}: ${fmtCurrency(x.price, currency)}`)
-            .join("\n");
-          const block =
+function calcPerPerson(){
+  let sum = 0;
+  for (const v of selectedMap.values()) sum += Number(v.price || 0);
+  return sum;
+}
+
+function updatePkgCalc(currency){
+  const per = calcPerPerson();
+  const people = getPeople();
+  const total = people > 0 ? per * people : 0;
+
+  pkgPerPerson.textContent = fmtCurrency(per, currency);
+  pkgTotal.textContent = fmtCurrency(total, currency);
+
+  if (selectedMap.size === 0){
+    pkgTotalHint.textContent = "Wähle Speisen aus, um zu berechnen.";
+  } else if (people <= 0){
+    pkgTotalHint.textContent = "Jetzt noch Personenanzahl eintragen → dann berechnen wir den Gesamtbetrag.";
+  } else {
+    const items = Array.from(selectedMap.values()).map(x => `${x.label} (${fmtCurrency(x.price, currency)})`);
+    pkgTotalHint.textContent = `Ausgewählt: ${items.join(" · ")}`;
+  }
+}
+
+function openPkgModal(pkg){
+  currentPkg = pkg;
+  selectedMap.clear();
+
+  const currency = pkg?.builder?.currency || "EUR";
+  pkgModalTitle.textContent = `Paket: ${pkg.title || ""}`;
+  pkgModalDesc.textContent = pkg.desc || "";
+
+  // Personenanzahl als Default aus dem Kontaktformular übernehmen (falls vorhanden)
+  const peopleInput = document.getElementById("people");
+  const existing = Number(peopleInput?.value || 0);
+  pkgPeople.value = existing > 0 ? String(existing) : "";
+
+  pkgBuilder.innerHTML = "";
+
+  const cats = pkg?.builder?.categories || [];
+  if (!cats.length){
+    pkgBuilder.innerHTML = `<div class="hint">Für dieses Paket ist noch keine Auswahl-Liste hinterlegt. (Admin → Pakete → Paket-Konfigurator)</div>`;
+  } else {
+    cats.forEach((cat, cIdx) => {
+      const wrap = document.createElement("div");
+      wrap.className = "builderCat";
+      wrap.innerHTML = `<h4>${cat.title || ""}</h4>`;
+
+      (cat.items || []).forEach((it, iIdx) => {
+        const id = `cb_${cIdx}_${iIdx}`;
+        const key = `${cIdx}:${iIdx}`;
+        const price = Number(it?.price || 0);
+
+        const row = document.createElement("div");
+        row.className = "builderItem";
+        row.innerHTML = `
+          <label for="${id}">
+            <input id="${id}" type="checkbox" data-key="${key}">
+            <div>
+              <div style="font-weight:900">${it.label || ""}</div>
+              <small>+ hinzufügen</small>
+            </div>
+          </label>
+          <div style="font-weight:1000;color:var(--accent)">${fmtCurrency(price, currency)}</div>
+        `;
+        wrap.appendChild(row);
+      });
+
+      pkgBuilder.appendChild(wrap);
+    });
+
+    pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => {
+      cb.addEventListener("change", () => {
+        const key = cb.getAttribute("data-key");
+        const [cIdx, iIdx] = key.split(":").map(Number);
+        const item = (cats[cIdx]?.items || [])[iIdx];
+        const price = Number(item?.price || 0);
+
+        if (cb.checked) selectedMap.set(key, { label: item?.label || "", price });
+        else selectedMap.delete(key);
+
+        updatePkgCalc(currency);
+      });
+    });
+  }
+
+  pkgPeople.oninput = () => updatePkgCalc(currency);
+
+  // Übernehmen -> ins Kontaktformular schreiben
+  pkgApply.onclick = () => {
+    const msg = document.getElementById("message");
+    const peopleField = document.getElementById("people");
+    const per = calcPerPerson();
+    const people = getPeople();
+    const total = people > 0 ? per * people : 0;
+
+    if (peopleField && people > 0) peopleField.value = String(people);
+
+    if (msg && currentPkg){
+      const lines = Array.from(selectedMap.values())
+        .map(x => `- ${x.label}: ${fmtCurrency(x.price, currency)} p.P.`)
+        .join("\n");
+
+      const block =
 `\n\n— Paket-Konfigurator —
 Paket: ${currentPkg.title}
+Personen: ${people || "-"}
+Auswahl (p.P.):
 ${lines || "- (nichts ausgewählt)"}
-Summe: ${fmtCurrency(sum, currency)}
+Betrag p.P.: ${fmtCurrency(per, currency)}
+Gesamt: ${people > 0 ? fmtCurrency(total, currency) : "-"}
 `;
-          msg.value += block;
-        }
-        closePkgModal();
-        location.hash = "#kontakt";
-      };
-    }
-    function openPkgModal(pkg){
-      currentPkg = pkg;
-      selectedMap.clear();
-
-      const currency = pkg?.builder?.currency || "EUR";
-      pkgModalTitle.textContent = `Paket: ${pkg.title || ""}`;
-      pkgModalDesc.textContent = pkg.desc || "";
-
-      pkgBuilder.innerHTML = "";
-
-      const cats = pkg?.builder?.categories || [];
-      if (!cats.length){
-        pkgBuilder.innerHTML = `<div class="hint">Für dieses Paket ist noch keine Auswahl-Liste hinterlegt. (Admin → Pakete → Paket-Konfigurator)</div>`;
-      } else {
-        cats.forEach((cat, cIdx) => {
-          const wrap = document.createElement("div");
-          wrap.className = "builderCat";
-          wrap.innerHTML = `<h4>${cat.title || ""}</h4>`;
-
-          (cat.items || []).forEach((it, iIdx) => {
-            const id = `cb_${cIdx}_${iIdx}`;
-            const key = `${cIdx}:${iIdx}`;
-            const price = Number(it?.price || 0);
-
-            const row = document.createElement("div");
-            row.className = "builderItem";
-            row.innerHTML = `
-              <label for="${id}">
-                <input id="${id}" type="checkbox" data-key="${key}">
-                <div>
-                  <div style="font-weight:900">${it.label || ""}</div>
-                  <small>+ hinzufügen</small>
-                </div>
-              </label>
-              <div style="font-weight:1000;color:var(--accent)">${fmtCurrency(price, currency)}</div>
-            `;
-            wrap.appendChild(row);
-          });
-
-          pkgBuilder.appendChild(wrap);
-        });
-
-        pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => {
-          cb.addEventListener("change", () => {
-            const key = cb.getAttribute("data-key");
-            const [cIdx, iIdx] = key.split(":").map(Number);
-            const item = (cats[cIdx]?.items || [])[iIdx];
-            const price = Number(item?.price || 0);
-
-            if (cb.checked) selectedMap.set(key, { label: item?.label || "", price });
-            else selectedMap.delete(key);
-
-            updatePkgTotal(currency);
-          });
-        });
-      }
-
-      updatePkgTotal(currency);
-
-      pkgModal.style.display = "flex";
-      pkgModal.setAttribute("aria-hidden", "false");
+      msg.value += block;
     }
 
-    pkgModalClose.addEventListener("click", closePkgModal);
-    pkgModal.addEventListener("click", (e) => { if (e.target === pkgModal) closePkgModal(); });
-    window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape"){
-        closeLb();
-        closePkgModal();
-      }
-    });
-    pkgReset.addEventListener("click", () => {
-      pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
-      selectedMap.clear();
-      updatePkgTotal(currentPkg?.builder?.currency || "EUR");
-    });
+    closePkgModal();
+    location.hash = "#kontakt";
+  };
+
+  // Reset
+  pkgReset.onclick = () => {
+    pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+    selectedMap.clear();
+    updatePkgCalc(currency);
+  };
+
+  updatePkgCalc(currency);
+
+  pkgModal.style.display = "flex";
+  pkgModal.setAttribute("aria-hidden", "false");
+}
+
+pkgModalClose.addEventListener("click", closePkgModal);
+pkgModal.addEventListener("click", (e) => { if (e.target === pkgModal) closePkgModal(); });
 
     // Language
     let SITE = null;
@@ -1277,6 +1314,7 @@ Summe: ${fmtCurrency(sum, currency)}
   </script>
 </body>
 </html>
+
 
 
 
