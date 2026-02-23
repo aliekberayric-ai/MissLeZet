@@ -173,39 +173,7 @@
         "image": "images/gallery/KofteSandwicvh.jpeg",
       
 
- "builder": {
-    "currency": "EUR",
-    "categories": [
-      {
-        "title": "Fingerfood",
-        "items": [
-          { "label": " Menu 2 Mini Börek (3 Stück)", "price": 4.5 },
-          { "label": "Menue 2 Sigara Böreği", "price": 3.5 }
-        ]
-      },
-      {
-        "title": "Vorspeisen",
-        "items": [
-          { "label": "Menue 2 Hummus", "price": 3.0 },
-          { "label": "Menue 2 Haydari", "price": 3.0 }
-        ]
-      },
-      {
-        "title": "Hauptgericht",
-        "items": [
-          { "label": "Menue 2 Köfte", "price": 6.5 },
-          { "label": "Menue 2 Hähnchen Spieß", "price": 6.5 }
-        ]
-      },
-      {
-        "title": "Dessert",
-        "items": [
-          { "label": "Menue 2 Baklava (2 Stück)", "price": 4.0 },
-          { "label": "Menue 2 Sütlaç", "price": 4.5 }
-        ]
-      }
-    ]
-  },
+
 
       
       {
@@ -223,39 +191,6 @@
       },
 
 
- "builder": {
-    "currency": "EUR",
-    "categories": [
-      {
-        "title": "Fingerfood",
-        "items": [
-          { "label": "M3 Mini Börek (3 Stück)", "price": 4.5 },
-          { "label": "M3 Sigara Böreği", "price": 3.5 }
-        ]
-      },
-      {
-        "title": "Vorspeisen",
-        "items": [
-          { "label": "M3 Hummus", "price": 3.0 },
-          { "label": "M3 Haydari", "price": 3.0 }
-        ]
-      },
-      {
-        "title": "Hauptgericht",
-        "items": [
-          { "label": "M3 Köfte", "price": 6.5 },
-          { "label": "M3 Hähnchen Spieß", "price": 6.5 }
-        ]
-      },
-      {
-        "title": "Dessert",
-        "items": [
-          { "label": "M3 Baklava (2 Stück)", "price": 4.0 },
-          { "label": "M3 Sütlaç", "price": 4.5 }
-        ]
-      }
-    ]
-  },
 
 
       
@@ -272,40 +207,6 @@
         ],
         "image": "images/gallery/TatliCilek.jpeg"
       },
-
- "builder": {
-    "currency": "EUR",
-    "categories": [
-      {
-        "title": "Fingerfood",
-        "items": [
-          { "label": "M4 Mini Börek (3 Stück)", "price": 4.5 },
-          { "label": "M4 Sigara Böreği", "price": 3.5 }
-        ]
-      },
-      {
-        "title": "Vorspeisen",
-        "items": [
-          { "label": "M4 Hummus", "price": 3.0 },
-          { "label": "M4 Haydari", "price": 3.0 }
-        ]
-      },
-      {
-        "title": "Hauptgericht",
-        "items": [
-          { "label": "M4 Köfte", "price": 6.5 },
-          { "label": "M44 Hähnchen Spieß", "price": 6.5 }
-        ]
-      },
-      {
-        "title": "Dessert",
-        "items": [
-          { "label": "M4 Baklava (2 Stück)", "price": 4.0 },
-          { "label": "M4 Sütlaç", "price": 4.5 }
-        ]
-      }
-    ]
-  }
 
 
   ],
