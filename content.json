@@ -121,8 +121,7 @@
           "1 Salat/Beilage",
           "Beschilderung (optional)"
         ],
-        "image": "images/gallery/Lahmacun.jpeg"
-      }
+        "image": "images/gallery/Lahmacun.jpeg",
        "builder": {
     "currency": "EUR",
     "categories": [
