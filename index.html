@@ -1174,7 +1174,7 @@ ${lblTot}: ${people > 0 ? fmtCurrency(total, currency) : "-"}
 
       // Fix logo URLs for GitHub Pages
       document.querySelectorAll('img.logoImg').forEach(img => {
-        const src = img.getAttribute("src") || "images/Logo.png";
+        const src = img.getAttribute("src") || "/images/Logo.png";
         img.setAttribute("src", assetUrl(src));
       });
 
@@ -1359,4 +1359,5 @@ ${lblTot}: ${people > 0 ? fmtCurrency(total, currency) : "-"}
   </script>
 </body>
 </html>
+
 
