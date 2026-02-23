@@ -250,6 +250,77 @@
       letter-spacing:.2px;
     }
 
+    /* ===== NEU: Paket-Konfigurator Modal ===== */
+    .modal{
+      position:fixed; inset:0; z-index:160;
+      background: rgba(0,0,0,.72);
+      display:none;
+      align-items:center; justify-content:center;
+      padding: 16px;
+    }
+    .modalInner{
+      width:min(940px, 100%);
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(10,12,16,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 30px 100px rgba(0,0,0,.75);
+      overflow:hidden;
+    }
+    .modalHead{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .modalClose{
+      border:none; cursor:pointer;
+      padding:10px 12px; border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      color: var(--text); font-weight:1000;
+    }
+    .modalBody{padding:16px}
+
+    .builderCat{
+      margin-top:14px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(0,0,0,.12);
+    }
+    .builderCat h4{
+      margin:0 0 8px;
+      font-size:14px;
+      letter-spacing:-.2px;
+    }
+    .builderItem{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .builderItem:first-of-type{border-top:none}
+    .builderItem label{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin:0;
+      color: var(--text);
+      font-size:14px;
+    }
+    .builderItem small{display:block; color: var(--muted); font-size:12px; margin-top:2px}
+    .calcResult{
+      margin-top:14px;
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,190,11,.25);
+      background: rgba(255,190,11,.08);
+    }
+
     @media (max-width: 980px){
       nav{display:none}
       .heroGrid{grid-template-columns:1fr}
@@ -434,7 +505,7 @@
       </div>
     </section>
 
-    <!-- KONTAKT (Netlify Forms) -->
+    <!-- KONTAKT -->
     <section id="kontakt">
       <div class="container">
         <div class="sectionTitle">
@@ -461,7 +532,7 @@
           </div>
 
           <div class="card contactRight reveal">
-            <form action="https://formspree.io/f/xkovrelw" method="POST">>
+            <form action="https://formspree.io/f/xkovrelw" method="POST">
               <input type="hidden" name="form-name" value="contact" />
               <p style="display:none;">
                 <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -526,14 +597,55 @@
           <div class="small">© <span id="year"></span> <span id="brandNameFoot2">Miss Lezzet</span></div>
         </div>
         <div class="right small">
-          <a href="/admin/">Admin</a>
+          <a href="admin/">Admin</a>
         </div>
       </div>
     </footer>
   </main>
 
+  <!-- ===== NEU: Paket-Konfigurator Modal ===== -->
+  <div class="modal" id="pkgModal" aria-hidden="true">
+    <div class="modalInner" role="dialog" aria-label="Paket zusammenstellen">
+      <div class="modalHead">
+        <b id="pkgModalTitle">Paket zusammenstellen</b>
+        <button class="modalClose" id="pkgModalClose" type="button">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="hint" id="pkgModalDesc"></div>
+        <div id="pkgBuilder"></div>
+
+        <div class="calcResult">
+          <div><b>Gesamtsumme:</b> <span id="pkgTotal">0,00 €</span></div>
+          <div class="hint" id="pkgTotalHint">Wähle Speisen aus, um die Summe zu berechnen.</div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn" type="button" id="pkgReset">Reset</button>
+          <a class="btn primary" href="#kontakt" id="pkgToForm">Als Anfrage übernehmen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== GitHub Pages Asset Fix =====
+    function repoBase(){
+      // GitHub Pages: https://username.github.io/repo/
+      if (location.hostname.endsWith("github.io")) {
+        const parts = location.pathname.split("/").filter(Boolean);
+        return parts.length ? `/${parts[0]}/` : "/";
+      }
+      return "/";
+    }
+    function assetUrl(u){
+      if (!u) return "";
+      if (/^https?:\/\//i.test(u)) return u;
+      const base = repoBase();
+      if (u.startsWith("/")) return base + u.replace(/^\/+/, "");
+      return base + u.replace(/^\.?\//, "");
+    }
 
     // Scroll reveal
     const obs = new IntersectionObserver(entries => {
@@ -550,6 +662,140 @@
     lbClose.addEventListener("click", closeLb);
     lb.addEventListener("click", (e) => { if(e.target === lb) closeLb(); });
     window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLb(); });
+
+    // ===== Paket-Konfigurator =====
+    const pkgModal = document.getElementById("pkgModal");
+    const pkgModalClose = document.getElementById("pkgModalClose");
+    const pkgModalTitle = document.getElementById("pkgModalTitle");
+    const pkgModalDesc = document.getElementById("pkgModalDesc");
+    const pkgBuilder = document.getElementById("pkgBuilder");
+    const pkgTotal = document.getElementById("pkgTotal");
+    const pkgTotalHint = document.getElementById("pkgTotalHint");
+    const pkgReset = document.getElementById("pkgReset");
+    const pkgToForm = document.getElementById("pkgToForm");
+
+    let currentPkg = null;
+    let selectedMap = new Map();
+
+    function fmtCurrency(val, currency="EUR"){
+      const num = Number(val || 0);
+      try{
+        return new Intl.NumberFormat("de-DE", { style:"currency", currency }).format(num);
+      }catch{
+        return `${num.toFixed(2)} €`;
+      }
+    }
+    function closePkgModal(){
+      pkgModal.style.display = "none";
+      pkgModal.setAttribute("aria-hidden", "true");
+    }
+    function updatePkgTotal(currency){
+      let sum = 0;
+      for (const v of selectedMap.values()) sum += Number(v.price || 0);
+
+      pkgTotal.textContent = fmtCurrency(sum, currency);
+
+      if (selectedMap.size === 0) {
+        pkgTotalHint.textContent = "Wähle Speisen aus, um die Summe zu berechnen.";
+      } else {
+        const items = Array.from(selectedMap.values()).map(x => `${x.label} (${fmtCurrency(x.price, currency)})`);
+        pkgTotalHint.textContent = `Ausgewählt: ${items.join(" · ")}`;
+      }
+
+      pkgToForm.onclick = () => {
+        const msg = document.getElementById("message");
+        if (msg && currentPkg){
+          const lines = Array.from(selectedMap.values())
+            .map(x => `- ${x.label}: ${fmtCurrency(x.price, currency)}`)
+            .join("\n");
+          const block =
+`\n\n— Paket-Konfigurator —
+Paket: ${currentPkg.title}
+${lines || "- (nichts ausgewählt)"}
+Summe: ${fmtCurrency(sum, currency)}
+`;
+          msg.value += block;
+        }
+        closePkgModal();
+        location.hash = "#kontakt";
+      };
+    }
+    function openPkgModal(pkg){
+      currentPkg = pkg;
+      selectedMap.clear();
+
+      const currency = pkg?.builder?.currency || "EUR";
+      pkgModalTitle.textContent = `Paket: ${pkg.title || ""}`;
+      pkgModalDesc.textContent = pkg.desc || "";
+
+      pkgBuilder.innerHTML = "";
+
+      const cats = pkg?.builder?.categories || [];
+      if (!cats.length){
+        pkgBuilder.innerHTML = `<div class="hint">Für dieses Paket ist noch keine Auswahl-Liste hinterlegt. (Admin → Pakete → Paket-Konfigurator)</div>`;
+      } else {
+        cats.forEach((cat, cIdx) => {
+          const wrap = document.createElement("div");
+          wrap.className = "builderCat";
+          wrap.innerHTML = `<h4>${cat.title || ""}</h4>`;
+
+          (cat.items || []).forEach((it, iIdx) => {
+            const id = `cb_${cIdx}_${iIdx}`;
+            const key = `${cIdx}:${iIdx}`;
+            const price = Number(it?.price || 0);
+
+            const row = document.createElement("div");
+            row.className = "builderItem";
+            row.innerHTML = `
+              <label for="${id}">
+                <input id="${id}" type="checkbox" data-key="${key}">
+                <div>
+                  <div style="font-weight:900">${it.label || ""}</div>
+                  <small>+ hinzufügen</small>
+                </div>
+              </label>
+              <div style="font-weight:1000;color:var(--accent)">${fmtCurrency(price, currency)}</div>
+            `;
+            wrap.appendChild(row);
+          });
+
+          pkgBuilder.appendChild(wrap);
+        });
+
+        pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => {
+          cb.addEventListener("change", () => {
+            const key = cb.getAttribute("data-key");
+            const [cIdx, iIdx] = key.split(":").map(Number);
+            const item = (cats[cIdx]?.items || [])[iIdx];
+            const price = Number(item?.price || 0);
+
+            if (cb.checked) selectedMap.set(key, { label: item?.label || "", price });
+            else selectedMap.delete(key);
+
+            updatePkgTotal(currency);
+          });
+        });
+      }
+
+      updatePkgTotal(currency);
+
+      pkgModal.style.display = "flex";
+      pkgModal.setAttribute("aria-hidden", "false");
+    }
+
+    pkgModalClose.addEventListener("click", closePkgModal);
+    pkgModal.addEventListener("click", (e) => { if (e.target === pkgModal) closePkgModal(); });
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeLb();
+        closePkgModal();
+      }
+    });
+    pkgReset.addEventListener("click", () => {
+      pkgBuilder.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+      selectedMap.clear();
+      updatePkgTotal(currentPkg?.builder?.currency || "EUR");
+    });
 
     // Language
     let SITE = null;
@@ -589,7 +835,6 @@
     }
 
     function uiStaticText(){
-      // kleine UI Texte (nicht im CMS), mehrsprachig:
       const map = {
         de: {
           ctaTop: "Angebot anfragen →",
@@ -626,7 +871,9 @@
           fSpam:"Anti-Spam aktiv. Kein Backend nötig.",
           imprintTitle:"Impressum",
           imprintSub:"Bitte mit euren echten Daten ergänzen.",
-          recommended:"Empfohlen"
+          recommended:"Empfohlen",
+          build:"Zusammenstellen",
+          quote:"Anfragen →"
         },
         tr: {
           ctaTop: "Teklif iste →",
@@ -663,7 +910,9 @@
           fSpam:"Anti-spam aktif. Backend gerekmez.",
           imprintTitle:"Künye",
           imprintSub:"Lütfen gerçek bilgileri ekleyin.",
-          recommended:"Önerilen"
+          recommended:"Önerilen",
+          build:"Seçim yap",
+          quote:"Teklif al →"
         },
         en: {
           ctaTop: "Request a quote →",
@@ -700,7 +949,9 @@
           fSpam:"Anti-spam enabled. No backend needed.",
           imprintTitle:"Imprint",
           imprintSub:"Please add your legal details.",
-          recommended:"Recommended"
+          recommended:"Recommended",
+          build:"Customize",
+          quote:"Request a quote →"
         }
       };
       return map[LANG] || map.de;
@@ -761,6 +1012,13 @@
       document.getElementById("imprintTitle").textContent = UI.imprintTitle;
       document.getElementById("imprintSub").textContent = UI.imprintSub;
 
+      // Fix logo URLs for GitHub Pages
+      document.querySelectorAll('img.logoImg').forEach(img => {
+        // keeps your current file name:
+        const src = img.getAttribute("src") || "images/Logo.png";
+        img.setAttribute("src", assetUrl(src));
+      });
+
       // Brand
       const brandName = t(SITE.brand?.name) || "Miss Lezzet";
       document.getElementById("brandName").textContent = brandName;
@@ -787,7 +1045,10 @@
       // Packages (Featured = Family & Friends)
       const pg = document.getElementById("packagesGrid");
       pg.innerHTML = "";
-      tList(SITE.packages).forEach(p => {
+
+      const pkgList = tList(SITE.packages);
+
+      pkgList.forEach((p, idx) => {
         const title = (p.title || "").toLowerCase();
         const isFeatured =
           title.includes("family") || title.includes("friends") ||
@@ -816,17 +1077,27 @@
 
           ${p.image ? `
             <div style="margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid var(--line)">
-              <img src="${p.image}" alt="${p.title || "Paket"}" style="width:100%;height:${isFeatured ? "280px" : "200px"};object-fit:cover;display:block;opacity:.95">
+              <img src="${assetUrl(p.image)}" alt="${p.title || "Paket"}" style="width:100%;height:${isFeatured ? "280px" : "200px"};object-fit:cover;display:block;opacity:.95">
             </div>` : ""}
 
           ${feats ? `<ul style="margin:12px 0 0;padding-left:18px">${feats}</ul>` : ""}
 
-          <div style="margin-top:12px">
-            <a class="btn primary" href="#kontakt">${LANG==="tr" ? "Teklif al →" : (LANG==="en" ? "Request a quote →" : "Anfragen →")}</a>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn" type="button" data-pkg-idx="${idx}">${UI.build}</button>
+            <a class="btn primary" href="#kontakt">${UI.quote}</a>
           </div>
         `;
         pg.appendChild(card);
         obs.observe(card);
+      });
+
+      // Wire package buttons -> open modal
+      document.querySelectorAll("[data-pkg-idx]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.getAttribute("data-pkg-idx"));
+          const pkg = pkgList[idx];
+          openPkgModal(pkg);
+        });
       });
 
       // Team
@@ -884,12 +1155,12 @@
         obs.observe(wrap);
       });
 
-      // Gallery
+      // Gallery (GH Pages safe paths)
       const galleryGrid = document.getElementById("galleryGrid");
       galleryGrid.innerHTML = "";
       tList(SITE.gallery).forEach(item => {
-        const src = item.image;
-        const cap = item.caption;
+        const src = assetUrl(item.image);
+        const cap = item.caption || "";
         const tile = document.createElement("div");
         tile.className = "g";
         tile.innerHTML = `<img src="${src}" alt="${cap}"><span>${cap}</span>`;
@@ -929,18 +1200,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
