@@ -1,29 +1,19 @@
 {
   "brand": {
-    "name": {
-      "de": "Miss Lezzet",
-      "tr": "Miss Lezzet",
-      "en": "Miss Lezzet"
-    },
+    "name": { "de": "Miss Lezet", "tr": "Miss Lezet", "en": "Miss Lezet" },
     "tagline": {
-      "de": "Premium-Catering • Frisch • Hausgemacht",
-      "tr": "Premium Catering • Taze • Ev yapımı",
-      "en": "Premium Catering • Fresh • Homemade"
+      "de": "Türkisches Premium-Catering • Frisch • Hausgemacht",
+      "tr": "Türk Premium Catering • Taze • Ev yapımı",
+      "en": "Turkish Premium Catering • Fresh • Homemade"
     }
   },
+
   "contact": {
-    "city": {
-      "de": "Rüsselsheim",
-      "tr": "Rüsselsheim",
-      "en": "Rüsselsheim"
-    },
-    "phone": {
-      "de": "+49  15554431",
-      "tr": "+49  155...",
-      "en": "+49  1556666777"
-    },
+    "city": { "de": "Rüsselsheim", "tr": "Rüsselsheim", "en": "Rüsselsheim" },
+    "phone": { "de": "+49 155 ...", "tr": "+49 155 ...", "en": "+49 155 ..." },
     "email": "info@misslezet.de"
   },
+
   "hero": {
     "kicker": {
       "de": "Catering für Hochzeiten, Firmen & private Events",
@@ -41,6 +31,7 @@
       "en": "Miss Lezet delivers traditional recipes, fresh ingredients and a premium presentation—mezze, börek, grill, desserts and vegetarian options."
     }
   },
+
   "about": {
     "text": {
       "de": "Wir sind ein Catering-Team mit Leidenschaft für authentische türkische Küche. Unser Fokus: ehrliche Zutaten, saubere Aromen und ein Buffet, das sowohl optisch als auch geschmacklich überzeugt.",
@@ -65,101 +56,114 @@
       ]
     }
   },
+
   "imprintHtml": {
     "de": "<b>Angaben gemäß § 5 TMG</b><br>Miss Lezet (Inhaber/in: [Name])<br>[Straße Hausnr.]<br>[PLZ Ort]<br><br><b>Kontakt</b><br>Telefon: [+49 …]<br>E-Mail: [info@misslezet.de]",
     "tr": "<b>Yasal Bilgiler</b><br>Miss Lezet ([Ad Soyad])<br>[Adres]<br><br><b>İletişim</b><br>Telefon: [+49 …]<br>E-posta: [info@misslezet.de]",
     "en": "<b>Legal notice</b><br>Miss Lezet ([Owner])<br>[Address]<br><br><b>Contact</b><br>Phone: [+49 …]<br>Email: [info@misslezet.de]"
   },
+
   "pricing": {
     "de": [
       {
-        "title": "Süsses",
-        "hint": "",
-        "items": [
-          {
-            "label": "Tatli",
-            "value": "4"
-          }
-        ]
+        "title": "Süßes",
+        "hint": "Preise pro Stück / Portion (Richtwerte)",
+        "items": [{ "label": "Baklava (Portion)", "value": "4,00 €" }]
       }
     ],
     "tr": [
       {
-        "title": "Tatli",
-        "hint": "g",
-        "items": [
-          {
-            "label": "rrr",
-            "value": "44"
-          }
-        ]
+        "title": "Tatlı",
+        "hint": "Adet / porsiyon (tahmini)",
+        "items": [{ "label": "Baklava (porsiyon)", "value": "4,00 €" }]
       }
     ],
     "en": [
       {
-        "title": "swets",
-        "hint": "",
-        "items": [
-          {
-            "label": "sweets",
-            "value": "7"
-          }
-        ]
+        "title": "Sweets",
+        "hint": "Per piece / portion (guidelines)",
+        "items": [{ "label": "Baklava (portion)", "value": "4.00 €" }]
       }
     ]
   },
+
   "packages": {
     "de": [
-     
-{
-  "title": "Business Lunch",
-  "price": "ab 16,90 € p.P.",
-  "badge": "Beliebt",
-  "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
-   "features": [
-          "Premium Mezze (6–8 Sorten)",
-          "3 Warmgerichte + vegetarische Option",
-          "Live-Setup/Service optional",
-          "Dessert-Bar (Baklava/Sütlaç Mix)"
+      {
+        "title": "Business Lunch",
+        "price": "ab 16,90 € p.P.",
+        "badge": "Beliebt",
+        "desc": "Ideal für Office, Meetings & Team-Lunch. Leicht, hochwertig, clean angerichtet.",
+        "features": [
+          "3–4 Mezze Sorten + Brot",
+          "1 Warmkomponente (z.B. Börek oder Köfte)",
+          "1 Salat/Beilage",
+          "Beschilderung (optional)"
         ],
-  "image": "",
-  
-  "builder": {
-    "currency": "EUR",
-    "categories": [
-      {
-        "title": "Fingerfood",
-        "items": [
-          { "label": "Mini Börek (3 Stück)", "price": 4.5 },
-          { "label": "Sigara Böreği", "price": 3.5 }
-        ]
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Sigara Böreği",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Mini Köfte Spieße",
+                  "price": 3.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Vorspeisen (Mezze)",
+              "items": [
+                {
+                  "label": "Hummus",
+                  "price": 1.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Cacık",
+                  "price": 1.7,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Hauptgericht",
+              "items": [
+                {
+                  "label": "Köfte (Warm)",
+                  "price": 6.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Vegetarisches Gemüsegericht",
+                  "price": 5.8,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Baklava (Portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
-        "title": "Vorspeisen",
-        "items": [
-          { "label": "Hummus", "price": 3.0 },
-          { "label": "Haydari", "price": 3.0 }
-        ]
-      },
-      {
-        "title": "Hauptgericht",
-        "items": [
-          { "label": "Köfte", "price": 6.5 },
-          { "label": "Hähnchen Spieß", "price": 6.5 }
-        ]
-      },
-      {
-        "title": "Dessert",
-        "items": [
-          { "label": "Baklava (2 Stück)", "price": 4.0 },
-          { "label": "Sütlaç", "price": 4.5 }
-        ]
-      }
-    ]
-  }
-},
-      
-{
         "title": "Family & Friends Buffet",
         "price": "ab 22,90 € p.P.",
         "badge": "Bestseller",
@@ -170,9 +174,75 @@
           "Pilav & Ofengemüse",
           "Dessert optional"
         ],
-        "image": "images/gallery/KofteSandwicvh.jpeg"  
-  },
-  {
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Içli Köfte (Mini)",
+                  "price": 3.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Sigara Böreği",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Vorspeisen (Mezze)",
+              "items": [
+                {
+                  "label": "Mezze Mix (4 Sorten)",
+                  "price": 6.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Salat (Saisonal)",
+                  "price": 3.0,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Hauptgericht",
+              "items": [
+                {
+                  "label": "Köfte + Pilav",
+                  "price": 9.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Hähnchen (Ofen/Grill)",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Sütlaç",
+                  "price": 3.6,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Baklava (Portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
+      },
+
+      {
         "title": "Wedding Premium",
         "price": "ab 29,90 € p.P.",
         "badge": "Premium",
@@ -183,8 +253,69 @@
           "Live-Setup/Service optional",
           "Dessert-Bar (Baklava/Sütlaç Mix)"
         ],
-        "image": "images/gallery/Kisir2.jpeg"
-      },      
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Mini Lahmacun",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Canapés (Mezze Style)",
+                  "price": 4.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Vorspeisen (Mezze)",
+              "items": [
+                {
+                  "label": "Premium Mezze (6 Sorten)",
+                  "price": 9.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Hauptgericht",
+              "items": [
+                {
+                  "label": "Kuzu (Lamm) Option",
+                  "price": 13.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Hähnchen + Köfte Kombi",
+                  "price": 12.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                },
+                {
+                  "label": "Vegetarische Hauptspeise",
+                  "price": 10.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Dessert-Bar Mix",
+                  "price": 6.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
+      },
+
       {
         "title": "Streetfood Party",
         "price": "ab 19,90 € p.P.",
@@ -196,13 +327,69 @@
           "Veggie Option (Falafel)",
           "Fingerfood Add-on möglich"
         ],
-        "image": "images/gallery/TatliCilek.jpeg"
-      },
-  ],
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Falafel (Mini)",
+                  "price": 2.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Mini Pide",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Vorspeisen (Mezze)",
+              "items": [
+                {
+                  "label": "Hummus + Ezme",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Hauptgericht",
+              "items": [
+                {
+                  "label": "Döner-Style Bowl",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Lahmacun (Mini)",
+                  "price": 7.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Baklava (Portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+
     "tr": [
       {
         "title": "Business Lunch",
-        "price": "Kişi başı 16,90 €’ dan",
+        "price": "Kişi başı 16,90 €’dan",
         "badge": "Popüler",
         "desc": "Ofis, toplantı ve ekip öğle yemeği için ideal. Hafif, kaliteli, şık sunum.",
         "features": [
@@ -211,8 +398,69 @@
           "1 salata/yan ürün",
           "Etiketleme (opsiyonel)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Sigara Böreği",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Mini Köfte Şiş",
+                  "price": 3.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Mezeler",
+              "items": [
+                {
+                  "label": "Humus",
+                  "price": 1.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Cacık",
+                  "price": 1.7,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Ana yemek",
+              "items": [
+                {
+                  "label": "Köfte (Sıcak)",
+                  "price": 6.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Vejetaryen sebze yemeği",
+                  "price": 5.8,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Tatlı",
+              "items": [
+                {
+                  "label": "Baklava (Porsiyon)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Family & Friends Büfe",
         "price": "Kişi başı 22,90 €’dan",
@@ -224,8 +472,74 @@
           "Pilav & fırın sebze",
           "Tatlı opsiyonel"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "İçli Köfte (Mini)",
+                  "price": 3.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Sigara Böreği",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Mezeler",
+              "items": [
+                {
+                  "label": "Meze Mix (4 çeşit)",
+                  "price": 6.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Salata (Mevsim)",
+                  "price": 3.0,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Ana yemek",
+              "items": [
+                {
+                  "label": "Köfte + Pilav",
+                  "price": 9.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Tavuk (Fırın/Izgara)",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Tatlı",
+              "items": [
+                {
+                  "label": "Sütlaç",
+                  "price": 3.6,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Baklava (Porsiyon)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Wedding Premium",
         "price": "Kişi başı 29,90 €’dan",
@@ -237,8 +551,69 @@
           "Kurulum/servis opsiyonel",
           "Tatlı barı (baklava/sütlaç)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Mini Lahmacun",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Meze Kanapeler",
+                  "price": 4.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Mezeler",
+              "items": [
+                {
+                  "label": "Premium Meze (6 çeşit)",
+                  "price": 9.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Ana yemek",
+              "items": [
+                {
+                  "label": "Kuzu (opsiyon)",
+                  "price": 13.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Tavuk + Köfte Kombi",
+                  "price": 12.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                },
+                {
+                  "label": "Vejetaryen ana yemek",
+                  "price": 10.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Tatlı",
+              "items": [
+                {
+                  "label": "Tatlı Bar Mix",
+                  "price": 6.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Streetfood Party",
         "price": "Kişi başı 19,90 €’dan",
@@ -250,9 +625,65 @@
           "Veggie seçenek (falafel)",
           "Fingerfood eklenebilir"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Fingerfood",
+              "items": [
+                {
+                  "label": "Falafel (Mini)",
+                  "price": 2.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Mini Pide",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Mezeler",
+              "items": [
+                {
+                  "label": "Humus + Ezme",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Ana yemek",
+              "items": [
+                {
+                  "label": "Döner Bowl",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Mini Lahmacun",
+                  "price": 7.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Tatlı",
+              "items": [
+                {
+                  "label": "Baklava (Porsiyon)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
+
     "en": [
       {
         "title": "Business Lunch",
@@ -265,8 +696,69 @@
           "1 salad/side",
           "Labeling (optional)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Finger food",
+              "items": [
+                {
+                  "label": "Crispy börek rolls",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Mini köfte skewers",
+                  "price": 3.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Starters (Mezze)",
+              "items": [
+                {
+                  "label": "Hummus",
+                  "price": 1.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Cacik (yogurt & cucumber)",
+                  "price": 1.7,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Main",
+              "items": [
+                {
+                  "label": "Warm köfte",
+                  "price": 6.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Vegetarian vegetable dish",
+                  "price": 5.8,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Baklava (portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Family & Friends Buffet",
         "price": "from €22.90 pp",
@@ -278,8 +770,74 @@
           "Pilav & roasted vegetables",
           "Dessert optional"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Finger food",
+              "items": [
+                {
+                  "label": "Mini içli köfte",
+                  "price": 3.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Crispy börek rolls",
+                  "price": 2.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Starters (Mezze)",
+              "items": [
+                {
+                  "label": "Mezze mix (4 items)",
+                  "price": 6.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Seasonal salad",
+                  "price": 3.0,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Main",
+              "items": [
+                {
+                  "label": "Köfte + pilav",
+                  "price": 9.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Chicken (oven/grill)",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Sütlaç (rice pudding)",
+                  "price": 3.6,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Baklava (portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Wedding Premium",
         "price": "from €29.90 pp",
@@ -291,8 +849,69 @@
           "Setup/service optional",
           "Dessert bar (baklava / sütlaç mix)"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Finger food",
+              "items": [
+                {
+                  "label": "Mini lahmacun",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                },
+                {
+                  "label": "Mezze canapés",
+                  "price": 4.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Starters (Mezze)",
+              "items": [
+                {
+                  "label": "Premium mezze (6 items)",
+                  "price": 9.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Main",
+              "items": [
+                {
+                  "label": "Lamb option",
+                  "price": 13.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.08.jpeg"
+                },
+                {
+                  "label": "Chicken + köfte combo",
+                  "price": 12.2,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.13.jpeg"
+                },
+                {
+                  "label": "Vegetarian main",
+                  "price": 10.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Dessert bar mix",
+                  "price": 6.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       },
+
       {
         "title": "Streetfood Party",
         "price": "from €19.90 pp",
@@ -304,110 +923,102 @@
           "Veggie option (falafel)",
           "Fingerfood add-on available"
         ],
-        "image": ""
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg",
+        "builder": {
+          "currency": "EUR",
+          "categories": [
+            {
+              "title": "Finger food",
+              "items": [
+                {
+                  "label": "Mini falafel",
+                  "price": 2.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                },
+                {
+                  "label": "Mini pide",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Starters (Mezze)",
+              "items": [
+                {
+                  "label": "Hummus + ezme",
+                  "price": 3.4,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Main",
+              "items": [
+                {
+                  "label": "Döner-style bowl",
+                  "price": 8.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.10.jpeg"
+                },
+                {
+                  "label": "Mini lahmacun",
+                  "price": 7.5,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (1).jpeg"
+                }
+              ]
+            },
+            {
+              "title": "Dessert",
+              "items": [
+                {
+                  "label": "Baklava (portion)",
+                  "price": 3.9,
+                  "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg"
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
+
   "team": {
-    "de": [
-      {
-        "name": "hatice",
-        "role": "chef",
-        "text": "hhh",
-        "initials": ""
-      }
-    ],
-    "tr": [
-      {
-        "name": "hatice",
-        "role": "chef",
-        "text": "hhh",
-        "initials": ""
-      }
-    ],
-    "en": [
-      {
-        "name": "hatice",
-        "role": "chef",
-        "text": "www",
-        "initials": ""
-      }
-    ]
+    "de": [],
+    "tr": [],
+    "en": []
   },
+
   "menu": {
-    "de": [
-      {
-        "title": "kat",
-        "hint": "",
-        "items": [
-          "item"
-        ]
-      },
-      {
-        "title": "kat",
-        "hint": "",
-        "items": [
-          "item"
-        ]
-      }
-    ],
-    "tr": [
-      {
-        "title": "kat",
-        "hint": "",
-        "items": [
-          "item"
-        ]
-      }
-    ],
-    "en": [
-      {
-        "title": "Kat",
-        "hint": "",
-        "items": [
-          "item"
-        ]
-      }
-    ]
+    "de": [],
+    "tr": [],
+    "en": []
   },
+
   "gallery": {
     "de": [
       {
-        "image": "images/gallery/koefte.jpg",
-        "caption": "f"
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "Buffet & Mezze"
       }
     ],
     "tr": [
       {
-        "image": "images/gallery/Tantuni.jpg",
-        "caption": "e"
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "Büfe & Meze"
       }
     ],
     "en": [
       {
-        "image": "images/gallery/Tantuni.jpg",
-        "caption": "d"
+        "image": "/images/gallery/WhatsApp Image 2026-02-16 at 03.38.12 (4).jpeg",
+        "caption": "Buffet & Mezze"
       }
     ]
   },
+
   "social": {
-    "de": [
-      {
-        "title": "spcial",
-        "text": "c"
-      }
-    ],
-    "tr": [
-      {
-        "title": "special",
-        "text": "b"
-      }
-    ],
-    "en": [
-      {
-        "title": "special",
-        "text": "a"
-      }
-    ]
+    "de": [{ "title": "Empfohlen", "text": "Top Service und super lecker!" }],
+    "tr": [{ "title": "Önerilen", "text": "Harika servis ve çok lezzetli!" }],
+    "en": [{ "title": "Recommended", "text": "Great service and delicious food!" }]
   }
 }
