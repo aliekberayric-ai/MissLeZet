@@ -348,6 +348,7 @@
       font-size:14px;
       letter-spacing:-.2px;
     }
+
     .builderItem{
       display:flex;
       align-items:center;
@@ -357,13 +358,43 @@
       border-top:1px solid rgba(255,255,255,.10);
     }
     .builderItem:first-of-type{border-top:none}
+
+    /* ✅ Preview Thumbnail */
+    .thumb{
+      width:42px;
+      height:42px;
+      border-radius: 14px;
+      object-fit: cover;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 12px 26px rgba(0,0,0,.35);
+      flex: 0 0 42px;
+    }
+    .thumbPh{
+      width:42px;
+      height:42px;
+      border-radius: 14px;
+      border:1px dashed rgba(255,255,255,.16);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(255,255,255,.35);
+      font-weight:1000;
+      flex: 0 0 42px;
+    }
+
     .builderItem label{
       display:flex;
       gap:10px;
-      align-items:flex-start;
+      align-items:center;
       margin:0;
       color: var(--text);
       font-size:14px;
+    }
+    .builderItem label input{
+      margin-top:0;
+      transform: scale(1.05);
     }
     .builderItem small{display:block; color: var(--muted); font-size:12px; margin-top:2px}
 
@@ -575,7 +606,7 @@
             </ul>
 
             <div class="hint" id="contactHint">
-              Netlify kann dir Anfragen per E-Mail weiterleiten (Site settings → Forms).
+              Formspree leitet Anfragen per E-Mail weiter.
             </div>
           </div>
 
@@ -674,12 +705,12 @@
             <input class="inputMini" id="pkgPeople" type="number" min="1" placeholder="z.B. 35" />
 
             <div class="calcRow" style="margin-top:10px">
-              <span>Betrag pro Person</span>
+              <span id="lblPerPerson">Betrag pro Person</span>
               <b id="pkgPerPerson" class="calcBig">0,00 €</b>
             </div>
 
             <div class="calcRow">
-              <span>Gesamtbetrag</span>
+              <span id="lblTotal">Gesamtbetrag</span>
               <b id="pkgTotal" class="calcBig">0,00 €</b>
             </div>
 
@@ -690,7 +721,7 @@
               <button class="btn primary" type="button" id="pkgApply">Übernehmen →</button>
             </div>
 
-            <div class="hint" style="margin-top:10px">
+            <div class="hint" style="margin-top:10px" id="pkgApplyHint">
               Tipp: „Übernehmen“ schreibt die Auswahl automatisch ins Kontaktformular.
             </div>
           </div>
@@ -754,7 +785,7 @@
     function fmtCurrency(val, currency="EUR"){
       const num = Number(val || 0);
       try{
-        return new Intl.NumberFormat("de-DE", { style:"currency", currency }).format(num);
+        return new Intl.NumberFormat(LANG === "tr" ? "tr-TR" : (LANG === "en" ? "en-US" : "de-DE"), { style:"currency", currency }).format(num);
       }catch{
         return `${num.toFixed(2)} €`;
       }
@@ -781,12 +812,12 @@
       pkgTotal.textContent = fmtCurrency(total, currency);
 
       if (selectedMap.size === 0){
-        pkgTotalHint.textContent = "Wähle Speisen aus, um zu berechnen.";
+        pkgTotalHint.textContent = (LANG==="tr" ? "Hesaplamak için ürün seç." : (LANG==="en" ? "Select items to calculate." : "Wähle Speisen aus, um zu berechnen."));
       } else if (people <= 0){
-        pkgTotalHint.textContent = "Jetzt noch Personenanzahl eintragen → dann berechnen wir den Gesamtbetrag.";
+        pkgTotalHint.textContent = (LANG==="tr" ? "Kişi sayısını gir → toplam hesaplanır." : (LANG==="en" ? "Enter guests → we calculate total." : "Jetzt noch Personenanzahl eintragen → dann berechnen wir den Gesamtbetrag."));
       } else {
         const items = Array.from(selectedMap.values()).map(x => `${x.label} (${fmtCurrency(x.price, currency)})`);
-        pkgTotalHint.textContent = `Ausgewählt: ${items.join(" · ")}`;
+        pkgTotalHint.textContent = (LANG==="tr" ? `Seçilenler: ${items.join(" · ")}` : (LANG==="en" ? `Selected: ${items.join(" · ")}` : `Ausgewählt: ${items.join(" · ")}`));
       }
     }
 
@@ -795,8 +826,14 @@
       selectedMap.clear();
 
       const currency = pkg?.builder?.currency || "EUR";
-      pkgModalTitle.textContent = `Paket: ${pkg.title || ""}`;
+      pkgModalTitle.textContent = `${(LANG==="tr" ? "Paket" : (LANG==="en" ? "Package" : "Paket"))}: ${pkg.title || ""}`;
       pkgModalDesc.textContent = pkg.desc || "";
+
+      // Labels im Modal
+      document.getElementById("lblPerPerson").textContent = (LANG==="tr" ? "Kişi başı" : (LANG==="en" ? "Per person" : "Betrag pro Person"));
+      document.getElementById("lblTotal").textContent = (LANG==="tr" ? "Toplam" : (LANG==="en" ? "Total" : "Gesamtbetrag"));
+      document.getElementById("pkgApplyHint").textContent =
+        (LANG==="tr" ? "İpucu: “Uygula” seçimi iletişim formuna yazar." : (LANG==="en" ? "Tip: “Apply” adds selection to contact form." : "Tipp: „Übernehmen“ schreibt die Auswahl automatisch ins Kontaktformular."));
 
       // Default Personenanzahl aus Kontaktformular ziehen
       const peopleInput = document.getElementById("people");
@@ -807,7 +844,11 @@
 
       const cats = pkg?.builder?.categories || [];
       if (!cats.length){
-        pkgBuilder.innerHTML = `<div class="hint">Für dieses Paket ist noch keine Auswahl-Liste hinterlegt. (Admin → Pakete → Paket-Konfigurator)</div>`;
+        pkgBuilder.innerHTML = `<div class="hint">${
+          LANG==="tr" ? "Bu paket için henüz liste yok. (Admin → Pakete → Paket-Konfigurator)" :
+          (LANG==="en" ? "No list saved yet for this package. (Admin → Packages → Builder)" :
+                        "Für dieses Paket ist noch keine Auswahl-Liste hinterlegt. (Admin → Pakete → Paket-Konfigurator)")
+        }</div>`;
       } else {
         cats.forEach((cat, cIdx) => {
           const wrap = document.createElement("div");
@@ -818,15 +859,22 @@
             const id = `cb_${cIdx}_${iIdx}`;
             const key = `${cIdx}:${iIdx}`;
             const price = Number(it?.price || 0);
+            const img = it?.image ? assetUrl(it.image) : "";
 
             const row = document.createElement("div");
             row.className = "builderItem";
+
+            const thumbHtml = img
+              ? `<img class="thumb" src="${img}" alt="${it?.label || "Preview"}" loading="lazy">`
+              : `<div class="thumbPh">•</div>`;
+
             row.innerHTML = `
               <label for="${id}">
                 <input id="${id}" type="checkbox" data-key="${key}">
+                ${thumbHtml}
                 <div>
                   <div style="font-weight:900">${it.label || ""}</div>
-                  <small>+ hinzufügen</small>
+                  <small>${LANG==="tr" ? "+ ekle" : (LANG==="en" ? "+ add" : "+ hinzufügen")}</small>
                 </div>
               </label>
               <div style="font-weight:1000;color:var(--accent)">${fmtCurrency(price, currency)}</div>
@@ -868,14 +916,24 @@
             .map(x => `- ${x.label}: ${fmtCurrency(x.price, currency)} p.P.`)
             .join("\n");
 
+          const header =
+            (LANG==="tr" ? "— Paket Konfigüratör —" :
+             (LANG==="en" ? "— Package Builder —" : "— Paket-Konfigurator —"));
+
+          const lblPkg = (LANG==="tr" ? "Paket" : (LANG==="en" ? "Package" : "Paket"));
+          const lblPeople = (LANG==="tr" ? "Kişi" : (LANG==="en" ? "Guests" : "Personen"));
+          const lblSel = (LANG==="tr" ? "Seçim (kişi başı)" : (LANG==="en" ? "Selection (pp)" : "Auswahl (p.P.)"));
+          const lblPer = (LANG==="tr" ? "Kişi başı" : (LANG==="en" ? "Per person" : "Betrag p.P."));
+          const lblTot = (LANG==="tr" ? "Toplam" : (LANG==="en" ? "Total" : "Gesamt"));
+
           const block =
-`\n\n— Paket-Konfigurator —
-Paket: ${currentPkg.title}
-Personen: ${people || "-"}
-Auswahl (p.P.):
+`\n\n${header}
+${lblPkg}: ${currentPkg.title}
+${lblPeople}: ${people || "-"}
+${lblSel}:
 ${lines || "- (nichts ausgewählt)"}
-Betrag p.P.: ${fmtCurrency(per, currency)}
-Gesamt: ${people > 0 ? fmtCurrency(total, currency) : "-"}
+${lblPer}: ${fmtCurrency(per, currency)}
+${lblTot}: ${people > 0 ? fmtCurrency(total, currency) : "-"}
 `;
           msg.value += block;
         }
@@ -968,7 +1026,7 @@ Gesamt: ${people > 0 ? fmtCurrency(total, currency) : "-"}
           contactTitle:"Kontaktformular",
           contactSub:"Schreib uns kurz – wir melden uns schnell.",
           contactBoxTitle:"Kontakt",
-          contactHint:"Netlify kann dir Anfragen per E-Mail weiterleiten (Site settings → Forms).",
+          contactHint:"Formspree leitet Anfragen per E-Mail weiter.",
           fName:"Name", fEmail:"E-Mail", fDate:"Event-Datum", fPeople:"Personenanzahl", fMsg:"Nachricht", fSend:"Anfrage senden",
           fSpam:"Anti-Spam aktiv. Kein Backend nötig.",
           imprintTitle:"Impressum",
@@ -1007,7 +1065,7 @@ Gesamt: ${people > 0 ? fmtCurrency(total, currency) : "-"}
           contactTitle:"İletişim",
           contactSub:"Kısaca yaz — hızlı döneriz.",
           contactBoxTitle:"İletişim",
-          contactHint:"Netlify istekleri e-posta ile iletebilir (Site settings → Forms).",
+          contactHint:"Formspree mesajları e-posta ile iletir.",
           fName:"Ad Soyad", fEmail:"E-posta", fDate:"Tarih", fPeople:"Kişi", fMsg:"Mesaj", fSend:"Gönder",
           fSpam:"Anti-spam aktif. Backend gerekmez.",
           imprintTitle:"Künye",
@@ -1046,7 +1104,7 @@ Gesamt: ${people > 0 ? fmtCurrency(total, currency) : "-"}
           contactTitle:"Contact",
           contactSub:"Send a quick note — we’ll reply fast.",
           contactBoxTitle:"Contact",
-          contactHint:"Netlify can forward submissions via email (Site settings → Forms).",
+          contactHint:"Formspree forwards submissions via email.",
           fName:"Name", fEmail:"Email", fDate:"Event date", fPeople:"Guests", fMsg:"Message", fSend:"Send inquiry",
           fSpam:"Anti-spam enabled. No backend needed.",
           imprintTitle:"Imprint",
