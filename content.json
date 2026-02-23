@@ -110,6 +110,7 @@
   },
   "packages": {
     "de": [
+     
       {
         "title": "Business Lunch",
         "price": "ab 16,90 € p.P.",
@@ -122,40 +123,43 @@
           "Beschilderung (optional)"
         ],
         "image": "images/gallery/Lahmacun.jpeg",
-       "builder": {
-    "currency": "EUR",
-    "categories": [
-      {
-        "title": "Fingerfood",
-        "items": [
-          { "label": "Mini Börek (3 Stück)", "price": 4.5 },
-          { "label": "Sigara Böreği", "price": 3.5 }
-        ]
-      },
+    
+        "builder": {
+        "currency": "EUR",
+        "categories": [
+          {
+            "title": "Fingerfood",
+            "items": [
+              { "label": "Mini Börek (3 Stück)", "price": 4.5 },
+              { "label": "Sigara Böreği", "price": 3.5 }
+                    ]
+           },
       {
         "title": "Vorspeisen",
         "items": [
           { "label": "Hummus", "price": 3.0 },
           { "label": "Haydari", "price": 3.0 }
-        ]
+                 ]
       },
+          
       {
         "title": "Hauptgericht",
         "items": [
           { "label": "Köfte", "price": 6.5 },
           { "label": "Hähnchen Spieß", "price": 6.5 }
-        ]
+                 ]
       },
+          
       {
         "title": "Dessert",
         "items": [
           { "label": "Baklava (2 Stück)", "price": 4.0 },
           { "label": "Sütlaç", "price": 4.5 }
-        ]
+                 ]
       }
-    ]
-  }
-},
+                        ]
+          
+                },
 {
         "title": "Family & Friends Buffet",
         "price": "ab 22,90 € p.P.",
