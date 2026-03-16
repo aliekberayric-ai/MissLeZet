@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: aliekberayric-ai.github.io/MissLeZet
+  repo: aliekberayric-ai/MissLeZet
   branch: main
+
+  site_url: https://aliekberayric-ai.github.io/MissLeZet
 
 media_folder: images/gallery
 public_folder: images/gallery
