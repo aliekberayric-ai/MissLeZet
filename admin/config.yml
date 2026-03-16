@@ -2,7 +2,6 @@ backend:
   name: github
   repo: aliekberayric-ai/MissLeZet
   branch: main
-  app_id: Iv1.8c4c1c7e1d3f9c4d
 
   site_url: "https://aliekberayric-ai.github.io/MissLeZet"
 
