@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: aliekberayric-ai/MissLeZet
+  repo: aliekberayric-ai.github.io/MissLeZet
   branch: main
 
 media_folder: images/gallery
