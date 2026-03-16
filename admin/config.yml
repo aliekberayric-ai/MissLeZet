@@ -2,6 +2,7 @@ backend:
   name: github
   repo: aliekberayric-ai/MissLeZet
   branch: main
+  base_url: https://sveltia-auth-misslezet.aliekberayric.workers.dev
 
   site_url: "https://aliekberayric-ai.github.io/MissLeZet"
 
