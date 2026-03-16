@@ -4,8 +4,7 @@ backend:
   branch: main
   auth_type: pat
 
-  site_url: 
-  https://aliekberayric-ai.github.io/MissLeZet
+  site_url:https://aliekberayric-ai.github.io/MissLeZet
 
 media_folder: images/gallery
 public_folder: images/gallery
